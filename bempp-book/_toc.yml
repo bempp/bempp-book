@@ -1,0 +1,59 @@
+- file: intro
+
+- part: API Overview
+  chapters:
+    - file: api/grids
+      sections:
+        - file: api/creating_grids
+        - file: api/using_grids
+    - file: api/function_spaces
+      sections:
+        - file: api/creating_function_spaces
+        - file: api/scalar_function_spaces
+        - file: api/vector_function_spaces
+        - file: api/segment_spaces
+    - file: api/grid_functions
+    - file: api/boundary_operators
+      sections:
+        - file: api/sparse_boundary_operators
+        - file: api/laplace_boundary_operators
+        - file: api/helmholtz_boundary_operators
+        - file: api/modified_helmholtz_boundary_operators
+        - file: api/maxwell_boundary_operators
+        - file: api/operator_algebra
+    - file: api/solvers
+      sections:
+            - file: api/direct_solvers
+            - file: api/iterative_solvers
+    - file: api/potential_operators
+      sections:
+            - file: api/laplace_potential_operators
+            - file: api/helmholtz_potential_operators
+            - file: api/modified_helmholtz_potential_operators
+            - file: api/maxwell_potential_operators
+- part: A dive into the Bempp core routines
+  chapters:
+    - file: core/assembling_operators
+      sections:
+            - file: core/assembling_numba
+            - file: core/assembling_opencl
+            - file: core/assembling_fmm
+
+- part: Mathematical background of boundary integral equations
+  chapters:
+    - file: theory/function_spaces
+      sections:
+            - file: theory/sobolev_spaces
+    - file: theory/discrete_function_spaces
+      sections:
+            - file: theory/dofs
+            - file: theory/inf-sup
+            - file: theory/projections
+      
+
+
+      
+
+
+
+      
