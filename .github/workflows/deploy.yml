@@ -43,6 +43,8 @@ jobs:
     steps:
     - name: Update Bempp Handbook
       run: |
+        git config --global user.email "bempp@mscroggs.co.uk"
+        git config --global user.name "Bempp Bot"
         git clone https://bemppbot:${{ secrets.bemppbot_github_token }}@github.com/bempp/bempp-website.git
         cd bempp-website
         cd handbook
