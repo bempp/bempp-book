@@ -28,5 +28,5 @@ For the final part of the handbook, we present a Bempp user's introduction to bo
 This part of the handbook aims the introduce the mathematics underlying BEM and highlight important aspects of the
 theory that should be taken into account when deciding how to approach BEM problems.
 
-This handbook is hosted on [GitHub](https://github.com/bempp/bempp-handbook) and we welcome suggestions for improving it
+This handbook is hosted on [GitHub](https://github.com/bempp/bempp-book) and we welcome suggestions for improving it
 in the issues and pull requests.
