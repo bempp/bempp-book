@@ -12,6 +12,6 @@ An approximation of the solution of this problem is then found by discretising t
 and searching for a solution in a subspace $\mathcal{V}_h\subset H^{1/2}(\Gamma)$.
 
 In this section of the Bempp Handbook, we look at the definitions of
-[continuous function spaces such as $H^{1/2}(\Gamma)$](soboov_space.md)
+[continuous function spaces such as $H^{1/2}(\Gamma)$](sobolev_spaces.md)
 that are used in the boundary integral equations, and we look at how
 [discrete subspaces](discrete_function_spaces.md) of these are usually defined.
