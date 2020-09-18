@@ -45,10 +45,10 @@ jobs:
       run: |
         git config --global user.email "bempp@mscroggs.co.uk"
         git config --global user.name "Bempp Bot"
-        git clone https://bemppbot:${{ secrets.bemppbot_github_token }}@github.com/bempp/bempp-website.git
+        git clone --recurse-submodules https://bemppbot:${{ secrets.bemppbot_github_token }}@github.com/bempp/bempp-website.git
         cd bempp-website
         cd handbook
-        git pull
+        git pull https://github.com/bempp/bempp-book.git gh-pages
         cd ..
         git commit -a -m "Update Bempp Handbook"
         git push
