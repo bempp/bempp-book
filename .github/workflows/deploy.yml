@@ -37,3 +37,16 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: bempp-book/_build/html
+  update-website:
+    needs: build-and-deploy-book
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Update Bempp Handbook
+      run: |
+        git clone https://bemppbot:${{ secrets.bemppbot_github_token }}@github.com/bempp/bempp-website.git
+        cd bempp-website
+        cd handbook
+        git pull
+        cd ..
+        git commit -a -m "Update Bempp Handbook"
+        git push
