@@ -45,6 +45,7 @@ jobs:
       run: |
         git config --global user.email "bempp@mscroggs.co.uk"
         git config --global user.name "Bempp Bot"
+        git config --global pull.rebase false
         git clone --recurse-submodules https://bemppbot:${{ secrets.bemppbot_github_token }}@github.com/bempp/bempp-website.git
         cd bempp-website
         cd handbook
