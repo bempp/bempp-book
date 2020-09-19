@@ -16,15 +16,13 @@ solution, info = bempp.api.linalg.gmres(opreator, grid_fun)
 
 These solvers take a number of optional arguments:
 
---------- | ----------- | -------
-Argument  | Description | Default
---------- | ----------- | -------
-`tol`     | The tolerance the solver should aim for | `1e-5`
-`maxiter` | The maximum number of iterations | No maximum
-`use_strong_form` | If `True`, the strong form of the operator will be used. If `False`, the weak form is used. | `False`
-`return_residuals` | If `True` the residuals will be returned as well as the solution and info | `False`
-`return_iteration_count` | If `True` the iteration count will be returned as well as the solution and info | `False`
---------- | ----------- | -------
+Argument                 | Description                                                                                 | Default
+------------------------ | ------------------------------------------------------------------------------------------- | ----------
+`tol`                    | The tolerance the solver should aim for                                                     | `1e-5`
+`maxiter`                | The maximum number of iterations                                                            | No maximum
+`use_strong_form`        | If `True`, the strong form of the operator will be used. If `False`, the weak form is used. | `False`
+`return_residuals`       | If `True` the residuals will be returned as well as the solution and info                   | `False`
+`return_iteration_count` | If `True` the iteration count will be returned as well as the solution and info             | `False`
 
 By default, Bempp will use the weak form discretisation of the operator and the coefficients
 of the grid function when using an iterative solver.

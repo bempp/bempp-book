@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/theory/dofs.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Inf-Sup Stability" href="inf-sup.html" />
@@ -133,18 +134,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_numba.html">
-   Assembling Operators using Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_fmm.html">
-   Assembling Operators using FMM
+  <a class="reference internal" href="../core/assembling_operators.html">
+   Assembling Operators
   </a>
  </li>
 </ul>
@@ -302,7 +293,6 @@ f_j(\phi_i)=\begin{cases}1&amp;i=j\\0&amp;i\not=j\end{cases}.
 <h2>Spaces used by Bempp<a class="headerlink" href="#spaces-used-by-bempp" title="Permalink to this headline">¶</a></h2>
 <p>The definitions of the spaces available in Bempp are summarised in the following table.
 In each case, <span class="math notranslate nohighlight">\(R\)</span> is the unit triangle.</p>
-<p>—– | ————- | ————-</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Space</p></th>
@@ -326,10 +316,6 @@ In each case, <span class="math notranslate nohighlight">\(R\)</span> is the uni
 <tr class="row-odd"><td><p>SNC1</p></td>
 <td><p><span class="math notranslate nohighlight">\(\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}y\\-x\end{array}\right)\right\}\)</span></p></td>
 <td><p>Point evaluations at the midpoints of edges of <span class="math notranslate nohighlight">\(R\)</span> in a direction tangential to the edge</p></td>
-</tr>
-<tr class="row-even"><td><p>—–</p></td>
-<td><p>————-</p></td>
-<td><p>————-</p></td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,10 @@ Boundary Operators for Maxwell's Equations
 For Maxwell's equations, there are two boundary operators that are used, as given in the table
 below.
 
--------------------- | ------------ | --------------
 Operator             | Symbol       | Matrix entries
 -------------------- | ------------ | --------------
 Electric field       | $\mathsf{E}$ | $m_{ij}=-\mathrm{i}k\int_\Gamma\int_\Gamma G_k(\mathbf{x},\mathbf{y})\mathbf{\phi}_j(\mathbf{y})\cdot\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}-\frac{1}{\mathrm{i}k}\int_\Gamma\int_\Gamma G_k(\mathrm{x},\mathrm{y})\nabla_\Gamma\mathbf{\phi}_j(\mathbf{y})\nabla_\Gamma\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})$
-Magnetic field       | $\mathsf{H}$ | $m\_{ij}=-\int_\Gamma\int_\Gamma\nabla_\mathbf{x}G_k(\mathbf{x},\mathbf{y})\cdot(\mathbf{\psi}_j(\mathbf{y})\times\mathbf{\psi}_i(\mathbf{x}))\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})$
--------------------- | ------------ | --------------
+Magnetic field       | $\mathsf{H}$ | $m_{ij}=-\int_\Gamma\int_\Gamma\nabla_\mathbf{x}G_k(\mathbf{x},\mathbf{y})\cdot(\mathbf{\psi}_j(\mathbf{y})\times\mathbf{\psi}_i(\mathbf{x}))\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})$
 
 
 In each case,  $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces (respectively),

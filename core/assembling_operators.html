@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; The Bempp Book</title>
+    <title>Assembling Operators &#8212; The Bempp Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/core/assembling_operators.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Assembling Operators using Numba" href="assembling_numba.html" />
@@ -49,8 +50,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://bempp.com/handbook/core/assembling_operators.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="&lt;no title&gt;" />
-<meta property="og:description" content="" />
+<meta property="og:title"       content="Assembling Operators" />
+<meta property="og:description" content="Assembling Operators  The functionality in bempp.core is almost exclusively for operator assembly and the multiplication of discrete operators and vectors, as t" />
 <meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -131,21 +132,28 @@
   A dive into the Bempp core routines
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="assembling_numba.html">
-   Assembling Operators using Numba
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assembling Operators
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="assembling_fmm.html">
-   Assembling Operators using FMM
-  </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assembling_numba.html">
+     Assembling Operators using Numba
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assembling_opencl.html">
+     Assembling Operators using OpenCL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="assembling_fmm.html">
+     Assembling Operators using FMM
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -229,6 +237,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
         <nav id="bd-toc-nav">
             
         </nav>
@@ -239,7 +250,9 @@
         
               <div>
                 
-  <p>The functionality in <code class="docutils literal notranslate"><span class="pre">bempp.core</span></code> is almost exclusively for operator assembly and the multiplication
+  <div class="section" id="assembling-operators">
+<h1>Assembling Operators<a class="headerlink" href="#assembling-operators" title="Permalink to this headline">¶</a></h1>
+<p>The functionality in <code class="docutils literal notranslate"><span class="pre">bempp.core</span></code> is almost exclusively for operator assembly and the multiplication
 of discrete operators and vectors, as these is the most computationally-heavy components of BEM.</p>
 <p>Bempp uses just-in-time compiled <a class="reference internal" href="assembling_opencl.html"><span class="doc std std-doc">OpenCL</span></a> or <a class="reference internal" href="assembling_numba.html"><span class="doc std std-doc">Numba</span></a>
 kernels to quickly assemble the dense matrices that arise from discretising BEM operators.</p>
@@ -248,6 +261,7 @@ time and storage space. For such problems, Bempp can use the <a class="reference
 to speed up matrix assembly and the computation of matrix-vector products. This is done via
 interfaces to the external <a class="reference external" href="https://github.com/exafmm/exafmm-t">ExaFMM</a> library.</p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">

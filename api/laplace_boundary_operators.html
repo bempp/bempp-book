@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/api/laplace_boundary_operators.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Boundary Operators for the Helmholtz Equation" href="helmholtz_boundary_operators.html" />
@@ -50,7 +51,7 @@
 <meta property="og:url"         content="https://bempp.com/handbook/api/laplace_boundary_operators.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Boundary Operators for Laplace’s Equation" />
-<meta property="og:description" content="Boundary Operators for Laplace’s Equation  For Laplace’s equation, there are four boundary operators that are used, as given in the table below.  ——————– | ————" />
+<meta property="og:description" content="Boundary Operators for Laplace’s Equation  For Laplace’s equation, there are four boundary operators that are used, as given in the table below.        Operator" />
 <meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -165,18 +166,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_numba.html">
-   Assembling Operators using Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_fmm.html">
-   Assembling Operators using FMM
+  <a class="reference internal" href="../core/assembling_operators.html">
+   Assembling Operators
   </a>
  </li>
 </ul>
@@ -278,7 +269,6 @@
 <h1>Boundary Operators for Laplace’s Equation<a class="headerlink" href="#boundary-operators-for-laplace-s-equation" title="Permalink to this headline">¶</a></h1>
 <p>For Laplace’s equation, there are four boundary operators that are used, as given in the table
 below.</p>
-<p>——————– | ————- | ————–</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operator</p></th>
@@ -303,13 +293,9 @@ below.</p>
 <td><p><span class="math notranslate nohighlight">\(\mathsf{W}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p>——————–</p></td>
-<td><p>————-</p></td>
-<td><p>————–</p></td>
-</tr>
 </tbody>
 </table>
-<p>In each case,  <span class="math notranslate nohighlight">\(\phi\_j\)</span> and <span class="math notranslate nohighlight">\(\psi\_i\)</span> are the basis functions of the domain and dual spaces (respectively),
+<p>In each case,  <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces (respectively),
 and <span class="math notranslate nohighlight">\(G(\mathbf{x},\mathbf{y})\)</span> is the Green’s function for Laplace’s equation.
 The Green’s function will have a singularity when <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{y}\)</span>, so internally Bempp will
 use appropriate singular quadrature rules to handle this.</p>

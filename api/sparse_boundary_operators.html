@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/api/sparse_boundary_operators.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Boundary Operators for Laplace’s Equation" href="laplace_boundary_operators.html" />
@@ -165,18 +166,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_numba.html">
-   Assembling Operators using Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_fmm.html">
-   Assembling Operators using FMM
+  <a class="reference internal" href="../core/assembling_operators.html">
+   Assembling Operators
   </a>
  </li>
 </ul>
@@ -281,7 +272,7 @@
 \[
 m_{ij}=\int_\Gamma\phi_j\cdot\overline{\psi_i},
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\phi\_j\)</span> and <span class="math notranslate nohighlight">\(\psi\_i\)</span> are the basis functions of the domain and dual spaces respectively.
+<p>where <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces respectively.
 As this integral will only be non-zero when the basis functions overlap, the resulting
 matrix will be sparse.</p>
 <p>The identity operator can be created in Bempp using:</p>

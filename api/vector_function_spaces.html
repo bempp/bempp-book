@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/api/vector_function_spaces.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Function Spaces on Segments" href="segment_spaces.html" />
@@ -155,18 +156,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_numba.html">
-   Assembling Operators using Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_fmm.html">
-   Assembling Operators using FMM
+  <a class="reference internal" href="../core/assembling_operators.html">
+   Assembling Operators
   </a>
  </li>
 </ul>
@@ -314,8 +305,11 @@ Inside each cell, these spaces are linear combinations of the vectors
 <span class="math notranslate nohighlight">\(\left(\begin{array}{c}0\\1\end{array}\right)\)</span>, and
 <span class="math notranslate nohighlight">\(\left(\begin{array}{c}-y\\x\end{array}\right)\)</span>. Between cells, RWG functions are continuous normal
 to the triangle’s edges, while SNC spaces are continuous tangential to the triangle’s edges.
-Example RWG (left) and SNC (right) basis functions are shown below.</p>
-<p><img alt="An RWG and a SNC basis function" src="../_images/rwg_and_snc.png" />{: .smaller }</p>
+Example RWG (left) and SNC (right) basis functions are shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">rwg_and_snc</span></code>.</p>
+<div class="figure align-default" id="rwg-and-snx">
+<a class="reference internal image-reference" href="../_images/rwg_and_snc.png"><img alt="../_images/rwg_and_snc.png" src="../_images/rwg_and_snc.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">An RWG and a SNC basis function</span><a class="headerlink" href="#rwg-and-snx" title="Permalink to this image">¶</a></p>
+</div>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rwg_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;RWG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">snc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;SNC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -327,13 +321,19 @@ Example RWG (left) and SNC (right) basis functions are shown below.</p>
 <h2>Barycentric dual spaces<a class="headerlink" href="#barycentric-dual-spaces" title="Permalink to this headline">¶</a></h2>
 <p>Like the scalar DUAL spaces, BC and RBC spaces are defined on the barycentrically refined grid.
 This grid is formed by joining
-each vertex of every triangle with the centre of the opposite side, as shown below.
-<img alt="Barycentrically refining a grid" src="../_images/barycentric_mesh.png" />{: .smaller }</p>
+each vertex of every triangle with the centre of the opposite side, as shown in <a class="reference internal" href="#bary-mesh"><span class="std std-numref">Fig. 6</span></a>.</p>
+<div class="figure align-default" id="bary-mesh">
+<a class="reference internal image-reference" href="../_images/barycentric_mesh.png"><img alt="../_images/barycentric_mesh.png" src="../_images/barycentric_mesh.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Barycentrically refining a grid</span><a class="headerlink" href="#bary-mesh" title="Permalink to this image">¶</a></p>
+</div>
 <p>BC and RBC spaces are combinations of RWG and SNC (repectively) spaces on the barycentric grid,
 and are defined in
 <a class="reference external" href="https://www.jstor.org/stable/40234460?seq=1"><em>A dual finite element complex on the barycentric refinement</em> (2007) by A. Buffa and S. Christiansen</a>.
-Example BC (left) and RBC (right) basis functions are shown below.</p>
-<p><img alt="Dual order 0 basis function" src="../_images/bc_and_rbc.png" />{: .smaller }</p>
+Example BC (left) and RBC (right) basis functions are shown in <a class="reference internal" href="#bc-and-rbc"><span class="std std-numref">Fig. 7</span></a>.</p>
+<div class="figure align-default" id="bc-and-rbc">
+<a class="reference internal image-reference" href="../_images/bc_and_rbc.png"><img alt="../_images/bc_and_rbc.png" src="../_images/bc_and_rbc.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A BC and a RBC basis function</span><a class="headerlink" href="#bc-and-rbc" title="Permalink to this image">¶</a></p>
+</div>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">rbc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;RBC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>

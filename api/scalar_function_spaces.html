@@ -37,6 +37,7 @@
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://bempp.com/handbook/api/scalar_function_spaces.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vector Function Spaces" href="vector_function_spaces.html" />
@@ -155,18 +156,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_numba.html">
-   Assembling Operators using Numba
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_opencl.html">
-   Assembling Operators using OpenCL
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_fmm.html">
-   Assembling Operators using FMM
+  <a class="reference internal" href="../core/assembling_operators.html">
+   Assembling Operators
   </a>
  </li>
 </ul>
@@ -339,7 +330,7 @@ An example basis function of an order 1 P space is shown in <a class="reference 
 <div class="section" id="barycentric-dual-spaces">
 <h2>Barycentric dual spaces<a class="headerlink" href="#barycentric-dual-spaces" title="Permalink to this headline">¶</a></h2>
 <p>To define the barycentric dual space, we first create the barycentrically refined mesh by joining
-each vertex of every triangle with the centre of the opposite side, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">bary_mesh</span></code>.</p>
+each vertex of every triangle with the centre of the opposite side, as shown in <a class="reference internal" href="vector_function_spaces.html#bary-mesh"><span class="std std-numref">Fig. 6</span></a>.</p>
 <p>The order 0 dual spaces are piecewise constant functions on the dual cells.
 An example basis function of an order 0 DUAL space is shown in <a class="reference internal" href="#dual0"><span class="std std-numref">Fig. 3</span></a>.
 Order 0 DUAL spaces form a stable dual pairing with order 1 P spaces.</p>
