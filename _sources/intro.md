@@ -8,7 +8,7 @@ Bempp is an open-source boundary element method library that can be used to asse
 Laplace, Helmholtz, modified Helmholtz, and Maxwell problems. The library has a user-friendly Python interface that allows the
 user to use BEM to solve a variety of problems, including problems in electrostatics, acoustics and electromagnetics.
 
-Bempp began life as BEM++, and was a Python library with a fast C++ computational core. The ++ slowly changed to a pp as
+[Bempp](https://bempp.com) began life as BEM++, and was a Python library with a fast C++ computational core. The ++ slowly changed to a pp as
 functionality gradually moved from C++ to Python. The latest version, `bempp-cl`, is a complete rewrite of the library, with
 the C++ core replaced by just-in-time compiled OpenCL kernels, and has many improvements over past versions of the library.
 
