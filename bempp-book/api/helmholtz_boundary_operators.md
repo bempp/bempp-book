@@ -5,17 +5,15 @@ Boundary Operators for the Helmholtz Equation
 For the Helmholtz equation, there are four boundary operators that are used, as given in the table
 below.
 
--------------------- | ------------- | --------------
 Operator             | Symbol        | Matrix entries
 -------------------- | ------------- | --------------
 Single layer         | $\mathsf{V}$  | $m_{ij}=\int_{\Gamma}\int_{\Gamma}G_k(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
-Double layer         | $\mathsf{K}$  | $m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi\_j(\mathbf{y})\psi\_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
-Adjoint double layer | $\mathsf{K}'$ | $m\_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
-Hypersingular        | $\mathsf{W}$  | $m\_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
--------------------- | ------------- | --------------
+Double layer         | $\mathsf{K}$  | $m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
+Adjoint double layer | $\mathsf{K}'$ | $m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
+Hypersingular        | $\mathsf{W}$  | $m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
 
-In each case,  $\phi\_j$ and $\psi\_i$ are the basis functions of the domain and dual spaces (respectively),
-and $G\_k(\mathbf{x},\mathbf{y})$ is the Green's function for the Helmholtz equation with
+In each case,  $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces (respectively),
+and $G_k(\mathbf{x},\mathbf{y})$ is the Green's function for the Helmholtz equation with
 wavenumber $k$.
 The Green's function will have a singularity when $\mathbf{x}=\mathbf{y}$, so internally Bempp will
 use appropriate singular quadrature rules to handle this.

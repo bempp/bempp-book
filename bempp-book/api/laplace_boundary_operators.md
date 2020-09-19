@@ -4,16 +4,14 @@ Boundary Operators for Laplace's Equation
 For Laplace's equation, there are four boundary operators that are used, as given in the table
 below.
 
--------------------- | ------------- | --------------
 Operator             | Symbol        | Matrix entries
 -------------------- | ------------- | --------------
 Single layer         | $\mathsf{V}$  | $m_{ij}=\int_{\Gamma}\int_{\Gamma}G(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
 Double layer         | $\mathsf{K}$  | $m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
 Adjoint double layer | $\mathsf{K}'$ | $m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
 Hypersingular        | $\mathsf{W}$  | $m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}$
--------------------- | ------------- | --------------
 
-In each case,  $\phi\_j$ and $\psi\_i$ are the basis functions of the domain and dual spaces (respectively),
+In each case,  $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces (respectively),
 and $G(\mathbf{x},\mathbf{y})$ is the Green's function for Laplace's equation.
 The Green's function will have a singularity when $\mathbf{x}=\mathbf{y}$, so internally Bempp will
 use appropriate singular quadrature rules to handle this.

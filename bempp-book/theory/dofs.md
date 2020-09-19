@@ -30,14 +30,12 @@ In this case, it is common to say that the space has a DOF at each vertex of the
 The definitions of the spaces available in Bempp are summarised in the following table.
 In each case, $R$ is the unit triangle.
 
------ | ------------- | -------------
 Space | $\mathcal{V}$ | $\mathcal{L}$
 ----- | ------------- | -------------
 DP0   | $\operatorname{span}\{1\}$ | Point evaluation at centre of $R$
 P1    | $\operatorname{span}\{1, x, y\}$ | point evaluations at vertices of $R$
 RWG1  | $\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}x\\y\end{array}\right)\right\}$ | Point evaluations at the midpoints of edges of $R$ in a direction normal to the edge
 SNC1  | $\operatorname{span}\left\{\left(\begin{array}{c}1\\0\end{array}\right),\left(\begin{array}{c}0\\1\end{array}\right),\left(\begin{array}{c}y\\-x\end{array}\right)\right\}$ | Point evaluations at the midpoints of edges of $R$ in a direction tangential to the edge
------ | ------------- | -------------
 
 The spaces defined on the barycentric dual grid are defined as subspaces of the spaces
 in the table above. Their definitions can be found in

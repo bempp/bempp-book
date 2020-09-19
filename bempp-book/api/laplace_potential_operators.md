@@ -4,13 +4,10 @@ Potential Operators for Laplace's Equation
 For Laplace's equation, there are two potential operators that are used, as given in the table
 below.
 
--------------------- | ----------
 Operator             | Definition
 -------------------- | ----------
 Single layer         | $(\mathcal{V}\mu)(\mathbf{x}) := \int_{\Gamma} G(\mathbf{x},\mathbf{y}) \mu(\mathbf{y})\,\mathrm{d}\mathbf{y}$
 Double layer         | $(\mathcal{K}v)(\mathbf{x}) := \int_{\Gamma} \frac{\partial G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}} v(\mathbf{y})\,\mathrm{d}\mathbf{y}$
--------------------- | ----------
-
 
 In each case, $G(\mathbf{x},\mathbf{y})$ is the Green's function for Laplace's equation.
 

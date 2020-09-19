@@ -1,11 +1,5 @@
----
-title: Assembling Operators
-layout: handbook
-children:
-  - core/assembling_opencl.md
-  - core/assembling_numba.md
-  - core/assembling_fmm.md
----
+Assembling Operators
+====================
 The functionality in `bempp.core` is almost exclusively for operator assembly and the multiplication
 of discrete operators and vectors, as these is the most computationally-heavy components of BEM.
 

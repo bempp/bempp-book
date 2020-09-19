@@ -7,7 +7,7 @@ $$
 m_{ij}=\int_\Gamma\phi_j\cdot\overline{\psi_i},
 $$
 
-where $\phi\_j$ and $\psi\_i$ are the basis functions of the domain and dual spaces respectively.
+where $\phi_j$ and $\psi_i$ are the basis functions of the domain and dual spaces respectively.
 As this integral will only be non-zero when the basis functions overlap, the resulting
 matrix will be sparse.
 
