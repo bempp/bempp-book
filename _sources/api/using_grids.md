@@ -56,13 +56,11 @@ This returns a 2&times;3 array of the vertex coordinates associated
 with the three edges of the element.
 Edges in Bempp are ordered in the following way:
 
----- | ------------ | -------------
 Edge | First vertex | Second vertex
 ---- | ------------ | -------------
  0   |  0           |  1
  1   |  0           |  2
  2   |  1           |  2
----- | ------------ | -------------
 
 Full automatically-generated documentation of the Bempp `Grid` class can be found
 [here](https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/grid/grid/index.html#bempp.api.grid.grid.Grid).
