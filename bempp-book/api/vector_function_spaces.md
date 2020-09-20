@@ -14,10 +14,7 @@ When solving Maxwell's equations, the correct combination of Hdiv and Hcurl spac
 
 ## RWG and SNC spaces
 RWG and SNC spaces are vector-valued spaces, whose values are tangential to the surface triangles.
-Inside each cell, these spaces are linear combinations of the vectors
-$\left(\begin{array}{c}1\\0\end{array}\right)$,
-$\left(\begin{array}{c}0\\1\end{array}\right)$, and
-$\left(\begin{array}{c}-y\\x\end{array}\right)$. Between cells, RWG functions are continuous normal
+Between cells, RWG functions are continuous normal
 to the triangle's edges, while SNC spaces are continuous tangential to the triangle's edges.
 Example RWG (left) and SNC (right) basis functions are shown in {numref}`rwg_and_snc`.
 

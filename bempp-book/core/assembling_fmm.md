@@ -5,5 +5,4 @@ For larger problems, dense assembly using OpenCL or Numba become very expensive,
 computation time and memory consumption. In such cases, Bempp can use the fast multipole method (FMM)
 to speed up its calculations and reduce memory usage.
 
-Internally, Bempp uses the [ExaFMM](https://github.com/exafmm/exatmm-t) library
-to carry out its FMM computations.
+Internally, Bempp uses the [ExaFMM](https://github.com/exafmm/exatmm-t) library to carry out its FMM computations.
