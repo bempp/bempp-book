@@ -1,3 +1,4 @@
+(content:green_representation)=
 # Green's Representation Theorem
 
 In this chapter we will derive Green's representation theorem, which allows us to represent solutions of certain types of partial differential equations using only values and derivatives on the boundary.
@@ -107,4 +108,10 @@ $$
 [\mathcal{N}f](x) = \int_{\Omega}g(x, y)f(y)\ dV(y).
 $$
 
+With this notation Green's representation theorem has the compact form
 
+$$
+u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_n +\mathcal{N}f.
+$$
+
+Here, $u_{\Omega}$ is the function $u$ inside $\Omega$, $u_{\Gamma}$ denotes the boundary data of $u$ (or more precisely the trace of $u$), and $u_n$ denotes the normal derivative of $u$ on the boundary $\Gamma$.

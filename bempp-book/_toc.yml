@@ -41,14 +41,16 @@
 
 - part: Mathematical background of boundary integral equations
   chapters:
+    - file: theory/greens_representation
     - file: theory/function_spaces
-      sections:
-            - file: theory/sobolev_spaces
-    - file: theory/discrete_function_spaces
-      sections:
-            - file: theory/dofs
-            - file: theory/inf-sup
-            - file: theory/projections
+      #- file: theory/function_spaces
+      #sections:
+      #      - file: theory/sobolev_spaces
+      #- file: theory/discrete_function_spaces
+      #sections:
+      #      - file: theory/dofs
+      #      - file: theory/inf-sup
+      #      - file: theory/projections
       
 
 
