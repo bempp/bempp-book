@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -40,6 +40,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function Spaces for scalar problems" href="function_spaces.html" />
+    <link rel="prev" title="Assembling Operators using FMM" href="../core/assembling_fmm.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -142,15 +144,15 @@
   Mathematical background of boundary integral equations
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="function_spaces.html">
-   Function Spaces
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Green’s Representation Theorem
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="discrete_function_spaces.html">
-   Discrete Function Spaces
+  <a class="reference internal" href="function_spaces.html">
+   Function Spaces for scalar problems
   </a>
  </li>
 </ul>
@@ -206,6 +208,21 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Ftheory/greens_representation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/bempp/bempp-book/edit/master/theory/greens_representation.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -249,7 +266,7 @@
               <div>
                 
   <div class="section" id="green-s-representation-theorem">
-<h1>Green’s Representation Theorem<a class="headerlink" href="#green-s-representation-theorem" title="Permalink to this headline">¶</a></h1>
+<span id="content-green-representation"></span><h1>Green’s Representation Theorem<a class="headerlink" href="#green-s-representation-theorem" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter we will derive Green’s representation theorem, which allows us to represent solutions of certain types of partial differential equations using only values and derivatives on the boundary.</p>
 <div class="section" id="the-divergence-theorem">
 <h2>The divergence theorem<a class="headerlink" href="#the-divergence-theorem" title="Permalink to this headline">¶</a></h2>
@@ -339,6 +356,12 @@ u(x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial n(y)}\ dS(y) - \int_{\Gamm
 \[
 [\mathcal{N}f](x) = \int_{\Omega}g(x, y)f(y)\ dV(y).
 \]</div>
+<p>With this notation Green’s representation theorem has the compact form</p>
+<div class="math notranslate nohighlight">
+\[
+u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_n +\mathcal{N}f.
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the function <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> denotes the boundary data of <span class="math notranslate nohighlight">\(u\)</span> (or more precisely the trace of <span class="math notranslate nohighlight">\(u\)</span>), and <span class="math notranslate nohighlight">\(u_n\)</span> denotes the normal derivative of <span class="math notranslate nohighlight">\(u\)</span> on the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
 </div>
 </div>
 
@@ -370,6 +393,8 @@ u(x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial n(y)}\ dS(y) - \int_{\Gamm
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="../core/assembling_fmm.html" title="previous page">Assembling Operators using FMM</a>
+    <a class='right-next' id="next-link" href="function_spaces.html" title="next page">Function Spaces for scalar problems</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

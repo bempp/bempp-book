@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Function Spaces &#8212; The Bempp Book</title>
+    <title>Function Spaces for scalar problems &#8212; The Bempp Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -40,8 +40,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sobolev Spaces" href="sobolev_spaces.html" />
-    <link rel="prev" title="Assembling Operators using FMM" href="../core/assembling_fmm.html" />
+    <link rel="prev" title="Green’s Representation Theorem" href="greens_representation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -50,8 +49,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://bempp.com/handbook/theory/function_spaces.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Function Spaces" />
-<meta property="og:description" content="Function Spaces  To use the boundary element method, we start with a variational boundary integral equation, for example: Find u\in H^{1/2}(\Gamma) such that fo" />
+<meta property="og:title"       content="Function Spaces for scalar problems" />
+<meta property="og:description" content="Function Spaces for scalar problems  In Green’s Representation Theorem we have derived Green’s representation theorem for Helmholtz type problems in three dimen" />
 <meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -145,21 +144,14 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="greens_representation.html">
+   Green’s Representation Theorem
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Function Spaces
-  </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sobolev_spaces.html">
-     Sobolev Spaces
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="discrete_function_spaces.html">
-   Discrete Function Spaces
+   Function Spaces for scalar problems
   </a>
  </li>
 </ul>
@@ -215,6 +207,21 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Ftheory/function_spaces.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/bempp/bempp-book/edit/master/theory/function_spaces.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -231,7 +238,39 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-spaces-l-2-omega-and-h-1-omega">
+   The spaces
+   <span class="math notranslate nohighlight">
+    \(L^2(\Omega)\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(H^1(\Omega)\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
+   The trace spaces
+   <span class="math notranslate nohighlight">
+    \(H^{1/2}(\Omega)\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(H^{-1/2}(\Omega)\)
+   </span>
+   .
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#norms-inner-products-and-dual-pairings">
+   Norms, inner products and dual pairings
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -240,21 +279,54 @@
         
               <div>
                 
-  <div class="section" id="function-spaces">
-<h1>Function Spaces<a class="headerlink" href="#function-spaces" title="Permalink to this headline">¶</a></h1>
-<p>To use the boundary element method, we start with a variational boundary integral
-equation, for example: Find <span class="math notranslate nohighlight">\(u\in H^{1/2}(\Gamma)\)</span> such that for all <span class="math notranslate nohighlight">\(v\in H^{1/2}(\Gamma)\)</span>,</p>
+  <div class="section" id="function-spaces-for-scalar-problems">
+<h1>Function Spaces for scalar problems<a class="headerlink" href="#function-spaces-for-scalar-problems" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a> we have derived Green’s representation theorem for Helmholtz type problems in three dimensions. In this chapter we wanted to discuss in some more detail what the correct function spaces for the various objects in Green’s representation theorem are. This is important for choosing the right type of discretisations in actual computations.</p>
+<p>We recall Green’s representation theorem for the solution <span class="math notranslate nohighlight">\(u\)</span> of the PDE <span class="math notranslate nohighlight">\(-\Delta u-k^2u=f\)</span> in a domain <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\left\langle\mathsf{V}u,v\right\rangle = \left\langle f,v\right\rangle.
+u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_n +\mathcal{N}f.
 \]</div>
-<p>An approximation of the solution of this problem is then found by discretising the problem
-and searching for a solution in a subspace <span class="math notranslate nohighlight">\(\mathcal{V}_h\subset H^{1/2}(\Gamma)\)</span>.</p>
-<p>In this section of the Bempp Handbook, we look at the definitions of
-<a class="reference internal" href="sobolev_spaces.html"><span class="doc std std-doc">continuous function spaces such as <span class="math notranslate nohighlight">\(H^{1/2}(\Gamma)\)</span></span></a>
-that are used in the boundary integral equations, and we look at how
-<a class="reference internal" href="discrete_function_spaces.html"><span class="doc std std-doc">discrete subspaces</span></a> of these are usually defined.</p>
-<div class="toctree-wrapper compound">
+<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the solution <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> and <span class="math notranslate nohighlight">\(u_n\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(u\)</span> at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The operators <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> are the single layer potential operator, double layer potential operator, and the Newton potential operator, respectively.</p>
+<p>In this chapter we want to discuss what the suitable function spaces are for Green’s representation theorem to make sense.</p>
+<p>We start off with the solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> satisfying</p>
+<div class="math notranslate nohighlight">
+\[
+-\Delta u_{\Omega}(x) - k^2u_{\Omega}(x) = f(x)
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(x\in\Omega\)</span>. To obtain more insight into the properties of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> we multiply this equation with <span class="math notranslate nohighlight">\(\overline{u_{\Omega}}\)</span> (the complex conjugate of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span>) and integrate by parts to obtain</p>
+<div class="math notranslate nohighlight" id="equation-eq-squared-helmholtz">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-squared-helmholtz" title="Permalink to this equation">¶</a></span>\[
+\int_{\Omega}|\nabla u_{\Omega}|^2\ dV - k^2\int_{\Omega} |u_{\Omega}|\ ^2 dV - \int_{\Gamma}\overline{u_{\Gamma}}u_n\ dS = \int_{\Omega}\overline{u_{\Omega}}f\ dV
+\]</div>
+<p>By <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> we denote the restriction of the domain solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
+<p>In order for this equation to make sense we require that all terms are finite. This motivates the definition of the following spaces.</p>
+<div class="section" id="the-spaces-l-2-omega-and-h-1-omega">
+<h2>The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span><a class="headerlink" href="#the-spaces-l-2-omega-and-h-1-omega" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The space of square integrable functions <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> of all functions <span class="math notranslate nohighlight">\(v\)</span> that satisfy <span class="math notranslate nohighlight">\(\int_{\Omega}|v|^2\ dV &lt; \infty\)</span>.</p></li>
+<li><p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> of all square integrable functions <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> that also have a square integrable derivative, that is <span class="math notranslate nohighlight">\(\int_{\Omega}|\nabla v|^2\ dV &lt; \infty\)</span>.</p></li>
+</ul>
+<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> is called a Sobolev space. The notion of derivative here is a bit more general than then standard notion of derivative. It only requires functions in the space to be weakly differentiable. While we want to avoid going into too much detail of weak differentiability, a very good example is the function <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> for <span class="math notranslate nohighlight">\(x\in [-1, 1]\)</span>. It is differentiable for <span class="math notranslate nohighlight">\(x\neq 0\)</span>, but not at the point <span class="math notranslate nohighlight">\(x=0\)</span>. However, it is still weakly differentiable. The derivative is well defined for all points <span class="math notranslate nohighlight">\(x\neq 0\)</span>, and at zero we can assign the derivative any finite value to obtain <span class="math notranslate nohighlight">\(\int_{[-1, 1]} |\nabla f(x)|^2dx &lt; \infty\)</span>.</p>
+<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> can also be interpreted as a space of functions with bounded energy. It therefore makes physical sense to look for solutions in this space, and indeed it is the right space of functions for Helmholtz problems. This might be surprising as the original Helmholtz equation requires the solution to be twice differentiable. But we have seen that the second derivative disappears after integration by parts and this trick allows the treatment of larger classes of problems than just those where a second derivative exists in a strong classical sense. This is not artifical but involves problems in domains with corners or where the forcing term <span class="math notranslate nohighlight">\(f\)</span> on the right-hand side is just a point load.</p>
+</div>
+<div class="section" id="the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
+<h2>The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span>.<a class="headerlink" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> we have not yet discussed the spaces associated with the term <span class="math notranslate nohighlight">\(\int_{\Gamma}u_{\Gamma}u_n\)</span>. The function <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to <span class="math notranslate nohighlight">\(\Gamma\)</span>. It is possible to define a trace operator <span class="math notranslate nohighlight">\(\gamma_0\)</span>, which maps functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> to the values on the boundary. We define the space <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> as the range of this operator, that is</p>
+<div class="math notranslate nohighlight">
+\[
+H^{1/2}(\Gamma) := \gamma_0(H^{1}(\Omega)).
+\]</div>
+<p>Hence, <span class="math notranslate nohighlight">\(H^{1/2}(\Gamma)\)</span> consists of all functions that are the boundary values of functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span>. The index <span class="math notranslate nohighlight">\(1/2\)</span> may seem strange. Functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> are 1 times weakly differentiable. The exponent <span class="math notranslate nohighlight">\(1/2\)</span> denotes a half-order loss of smoothness. There are different ways to define fractional Sobolev spaces. But this is a technical topic, which we will not cover in more detail here. For our purpose the only relevance is that the space <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> contains the boundary values of solutions to the Helmholtz equation.</p>
+<p>The other important boundary space is the space <span class="math notranslate nohighlight">\(H^{-1/2}(\Gamma)\)</span>. This space contains all normal derivatives of functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span>. We define the operator <span class="math notranslate nohighlight">\(\gamma_1\)</span>, which maps a function <span class="math notranslate nohighlight">\(u\)</span> in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> to its normal derivative <span class="math notranslate nohighlight">\(u_n\)</span> on <span class="math notranslate nohighlight">\(\Gamma\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[
+H^{-1/2}(\Gamma) := \gamma_1(H^{1}(\Omega)).
+\]</div>
+<p>We will not go into details of the meaning of the exponent <span class="math notranslate nohighlight">\(-1/2\)</span>. An intuitve explanation is that taking derivatives reduces the order of a Sobolev space by <span class="math notranslate nohighlight">\(1\)</span>. The space of boundary traces has order <span class="math notranslate nohighlight">\(1/2\)</span>, and henceforth the space of normal derivatives has order one less, which is <span class="math notranslate nohighlight">\(-1/2\)</span>.</p>
+</div>
+<div class="section" id="norms-inner-products-and-dual-pairings">
+<h2>Norms, inner products and dual pairings<a class="headerlink" href="#norms-inner-products-and-dual-pairings" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -286,8 +358,7 @@ that are used in the boundary integral equations, and we look at how
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../core/assembling_fmm.html" title="previous page">Assembling Operators using FMM</a>
-    <a class='right-next' id="next-link" href="sobolev_spaces.html" title="next page">Sobolev Spaces</a>
+    <a class='left-prev' id="prev-link" href="greens_representation.html" title="previous page">Green’s Representation Theorem</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
