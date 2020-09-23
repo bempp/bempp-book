@@ -7,24 +7,24 @@ In this section, we will derive Green's representation theorem, which allows us 
 
 Our discussion starts with the divergence theorem. Assume that $\Omega\subset\mathbb{R}^3$ is a bounded domain with boundary $\Gamma$. For now we assume that $\Gamma$ is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that $\Gamma\in C^2$. This means that in the neighborhood of each point $x\in\Gamma$ we can find a local parameterisation of the boundary $\Gamma$, which is twice continuously differentiable.
 
-The divergence theorem now states that for each continuously differentiable vector valued function $F\in\mathbb{R}^3$ it holds that
+The divergence theorem now states that for each continuously differentiable vector valued function $\mathbf{F}\in\mathbb{R}^3$ it holds that
 
 $$
-\int_{\Omega} (\nabla \cdot F) dV = \int_{\Gamma} (F\cdot \mathbf{n})\,\mathrm{d}S.
+\int_{\Omega} (\nabla \cdot \mathbf{F})\,\mathrm{d}V = \int_{\Gamma} (\mathbf{P}\cdot \mathbf{n})\,\mathrm{d}S.
 $$
 
-Here, $n$ is the exterior normal at the boundary $\Gamma$. The expression $\nabla\cdot F$ on the left-hand side of the theorem is the divergence of $F$, also abbreviated $\text{div} F$. The divergence theorem motivates another definition of the divergence. Let $S_r$ be a small sphere with radius $r$ and center $x$. Then 
+Here, $\mathbf{n}$ is the exterior normal at the boundary $\Gamma$. The expression $\nabla\cdot \mathbf{F}$ on the left-hand side of the theorem is the divergence of $\mathbf{F}$, also abbreviated $\text{div} \mathbf{F}$. The divergence theorem motivates another definition of the divergence. Let $S_r$ be a small sphere with radius $r$ and center $\mathbf{x}$. Then 
 
 $$
-\operatorname{div} F(x) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(F\cdot n)\,\mathrm{d}S.
+\operatorname{div} \mathbf{F}(\mathbf{x}) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(\mathbf{F}\cdot \mathbf{n})\,\mathrm{d}S.
 $$
 
-The divergence is positive if the field $F$ is outward pointing at the point $x$. If the field at $x$ is inward pointing the divergence is negative.
+The divergence is positive if the field $\mathbf{F}$ is outward pointing at the point $\mathbf{x}$. If the field at $\mathbf{x}$ is inward pointing the divergence is negative.
 
 ## Green's identities
 
 Based on the divergence theorem, we can now derive the Green's identities. 
-We start with the first Green's identity. Let $u$ and $v$ be scalar functions with $u$ continuously differentiable and $v$ twice continuously differentiable. Choose $F = u\nabla v$. From the product rule of differentiation it follows that
+We start with the first Green's identity. Let $u$ and $v$ be scalar functions with $u$ continuously differentiable and $v$ twice continuously differentiable. Choose $\mathbf{F} = u\nabla v$. From the product rule of differentiation it follows that
 
 $$
 \nabla \cdot (u\nabla v) = \nabla u \cdot \nabla v + u\Delta v.
@@ -34,18 +34,18 @@ The operator $\Delta v$ is the Laplacian of $v$ defined as
 $$
 \nabla\cdot(\nabla v) = \frac{\partial^2v}{\partial x^2} + \frac{\partial^2v}{\partial y^2} + \frac{\partial^2v}{\partial z^2}.
 $$
-Plugging $F = u\nabla v$ into the divergence theorem we arrive at Green's first identity, which states that
+Plugging $\mathbf{F} = u\nabla v$ into the divergence theorem we arrive at Green's first identity, which states that
 
 $$
-\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}}\,\mathrm{d}S.
+\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\,\mathrm{d}V = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}}\,\mathrm{d}S.
 $$
 
-The expression $\frac{\partial v}{\partial \mathbf{n}} := \nabla v\cdot n$ is the normal derivative of $v$.
+The expression $\frac{\partial v}{\partial \mathbf{n}} := \nabla v\cdot \mathbf{n}$ is the normal derivative of $v$.
 
 Now assume that also $u$ is twice differentiable and swap the roles of $u$ and $v$ in Green's first identity. Subtracting the two identities for $F=u\nabla v$ and $F=v\nabla u$ we obtain
 
 $$
-\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}} - v\frac{\partial u}{\partial \mathbf{n}}\,\mathrm{d}.
+\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}} - v\frac{\partial u}{\partial \mathbf{n}}\,\mathrm{d}S.
 $$
 
 This equation is called Green's second identity.
