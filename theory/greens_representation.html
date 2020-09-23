@@ -51,7 +51,7 @@
 <meta property="og:url"         content="https://bempp.com/handbook/theory/greens_representation.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Green’s Representation Theorem" />
-<meta property="og:description" content="Green’s Representation Theorem  In this chapter we will derive Green’s representation theorem, which allows us to represent solutions of certain types of partia" />
+<meta property="og:description" content="Green’s Representation Theorem  In this section, we will derive Green’s representation theorem, which allows us to represent solutions of certain types of parti" />
 <meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -267,26 +267,26 @@
                 
   <div class="section" id="green-s-representation-theorem">
 <span id="content-green-representation"></span><h1>Green’s Representation Theorem<a class="headerlink" href="#green-s-representation-theorem" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter we will derive Green’s representation theorem, which allows us to represent solutions of certain types of partial differential equations using only values and derivatives on the boundary.</p>
+<p>In this section, we will derive Green’s representation theorem, which allows us to represent solutions of certain types of partial differential equations using only values and derivatives on the boundary.</p>
 <div class="section" id="the-divergence-theorem">
 <h2>The divergence theorem<a class="headerlink" href="#the-divergence-theorem" title="Permalink to this headline">¶</a></h2>
-<p>Our discussion starts with the divergence theorem. Assume that <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span> is a bounded domain with boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. For now we assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that <span class="math notranslate nohighlight">\(\Gamma\subset\mathcal{C}^2\)</span>. This means that in the neighborhood of each point <span class="math notranslate nohighlight">\(x\in\Gamma\)</span> we can find a local parameterisation of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>, which is twice continuously differentiable.</p>
+<p>Our discussion starts with the divergence theorem. Assume that <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span> is a bounded domain with boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. For now we assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that <span class="math notranslate nohighlight">\(\Gamma\in C^2\)</span>. This means that in the neighborhood of each point <span class="math notranslate nohighlight">\(x\in\Gamma\)</span> we can find a local parameterisation of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>, which is twice continuously differentiable.</p>
 <p>The divergence theorem now states that for each continuously differentiable vector valued function <span class="math notranslate nohighlight">\(F\in\mathbb{R}^3\)</span> it holds that</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega} (\nabla \cdot F) dV = \int_{\Gamma} (F\cdot n)dS.
+\int_{\Omega} (\nabla \cdot F) dV = \int_{\Gamma} (F\cdot \mathbf{n})\,\mathrm{d}S.
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(n\)</span> is the exterior normal at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The expression <span class="math notranslate nohighlight">\(\nabla\cdot F\)</span> on the left-hand side of the theorem is the divergence of <span class="math notranslate nohighlight">\(F\)</span>, also abbreviated <span class="math notranslate nohighlight">\(\text{div} F\)</span>. The divergence theorem motivates another definition of the divergence. Let <span class="math notranslate nohighlight">\(S_r\)</span> be a small sphere with radius <span class="math notranslate nohighlight">\(r\)</span> and center <span class="math notranslate nohighlight">\(x\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
-\text{div} F(x) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(F\cdot n)dS.
+\operatorname{div} F(x) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(F\cdot n)\,\mathrm{d}S.
 \]</div>
-<p>The divergence if positive if the field <span class="math notranslate nohighlight">\(F\)</span> is outward pointing at the point <span class="math notranslate nohighlight">\(x\)</span>. If the field at <span class="math notranslate nohighlight">\(x\)</span> is inward pointing the divergence is negative.</p>
+<p>The divergence is positive if the field <span class="math notranslate nohighlight">\(F\)</span> is outward pointing at the point <span class="math notranslate nohighlight">\(x\)</span>. If the field at <span class="math notranslate nohighlight">\(x\)</span> is inward pointing the divergence is negative.</p>
 </div>
 <div class="section" id="green-s-identities">
 <h2>Green’s identities<a class="headerlink" href="#green-s-identities" title="Permalink to this headline">¶</a></h2>
-<p>Based on the divergence theorem we can now derive the Green’s identities.
-We start with the first Green’s identity. Let <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> be scalar functions with <span class="math notranslate nohighlight">\(u\)</span> continuously differentiable and <span class="math notranslate nohighlight">\(v\)</span> twice continuously differentiable. Choose <span class="math notranslate nohighlight">\(F = u\nabla v\)</span>. From the product formula of differentiation it follows that</p>
+<p>Based on the divergence theorem, we can now derive the Green’s identities.
+We start with the first Green’s identity. Let <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> be scalar functions with <span class="math notranslate nohighlight">\(u\)</span> continuously differentiable and <span class="math notranslate nohighlight">\(v\)</span> twice continuously differentiable. Choose <span class="math notranslate nohighlight">\(F = u\nabla v\)</span>. From the product rule of differentiation it follows that</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla \cdot (u\nabla v) = \nabla u \cdot \nabla v + u\Delta v.
@@ -299,13 +299,13 @@ We start with the first Green’s identity. Let <span class="math notranslate no
 <p>Plugging <span class="math notranslate nohighlight">\(F = u\nabla v\)</span> into the divergence theorem we arrive at Green’s first identity, which states that</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\ dV = \int_{\Gamma} u\frac{\partial v}{\partial n} dS.
+\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}}\,\mathrm{d}S.
 \]</div>
-<p>The expression <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial n} := \nabla v\cdot n\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>The expression <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial \mathbf{n}} := \nabla v\cdot n\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>Now assume that also <span class="math notranslate nohighlight">\(u\)</span> is twice differentiable and swap the roles of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> in Green’s first identity. Subtracting the two identities for <span class="math notranslate nohighlight">\(F=u\nabla v\)</span> and <span class="math notranslate nohighlight">\(F=v\nabla u\)</span> we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial n} - v\frac{\partial u}{\partial n}dS.
+\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}} - v\frac{\partial u}{\partial \mathbf{n}}\,\mathrm{d}.
 \]</div>
 <p>This equation is called Green’s second identity.</p>
 </div>
@@ -327,7 +327,7 @@ We start with the first Green’s identity. Let <span class="math notranslate no
 <p>Typically, for <span class="math notranslate nohighlight">\(g(x, y)\)</span> we choose the free space Green’s function that satisfies that equation in the whole of <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>. For the given Helmholtz equation the free space Green’s function is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-g(x, y) = \frac{e^{ik|x - y|}}{4\pi|x-y|}
+g(x, y) = \frac{e^{\mathrm{i}k|x - y|}}{4\text{π}|x-y|}
 \]</div>
 <p>Another valid definition is obtained by replacing <span class="math notranslate nohighlight">\(k\)</span> with <span class="math notranslate nohighlight">\(-k\)</span>. The choice of the sign determines what is considered to be an outgoing wave solution. We will come back to this topic later.</p>
 <p>For this function it holds for <span class="math notranslate nohighlight">\(x\neq y\)</span> that</p>
@@ -339,29 +339,29 @@ g(x, y) = \frac{e^{ik|x - y|}}{4\pi|x-y|}
 <p>We now apply Green’s second identity with <span class="math notranslate nohighlight">\(u(y)\)</span> being a solution of <span class="math notranslate nohighlight">\(\mathcal{L}u(y)=f(y)\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> and <span class="math notranslate nohighlight">\(v(y) = g(x, y)\)</span>. The resulting equation is</p>
 <div class="math notranslate nohighlight">
 \[
-u(x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial n(y)}\ dS(y) - \int_{\Gamma} \frac{\partial g(x, y)}{\partial n(y)} u(y)\ dS(y) + \int_{\Omega}g(x, y)f(y)\ dV(y).
+u(x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial \mathbf{n}(y)}\,\mathrm{d}S(y) - \int_{\Gamma} \frac{\partial g(x, y)}{\partial \mathbf{n}(y)} u(y)\,\mathrm{d}S(y) + \int_{\Omega}g(x, y)f(y)\,\mathrm{d}V(y).
 \]</div>
 <p>This is Green’s representation theorem. Let us consider the three appearing terms in some more detail. The first term is called the <strong>single-layer potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(\phi\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{V}\phi](x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial n(y)}\ dS(y).
+[\mathcal{V}\phi](x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial \mathbf{n}(y)}\,\mathrm{d}S(y).
 \]</div>
 <p>The second term is called the <strong>double-layer potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(\psi\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{K}\psi](x) = \int_{\Gamma} \frac{\partial g(x, y)}{\partial n(y)} u(y)\ dS(y).
+[\mathcal{K}\psi](x) = \int_{\Gamma} \frac{\partial g(x, y)}{\partial \mathbf{n}(y)} u(y)\,\mathrm{d}S(y).
 \]</div>
 <p>Finally, the third term is the <strong>Newton potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(f\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{N}f](x) = \int_{\Omega}g(x, y)f(y)\ dV(y).
+[\mathcal{N}f](x) = \int_{\Omega}g(x, y)f(y)\,\mathrm{d}V(y).
 \]</div>
-<p>With this notation Green’s representation theorem has the compact form</p>
+<p>With this notation, Green’s representation theorem has the compact form</p>
 <div class="math notranslate nohighlight">
 \[
-u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_n +\mathcal{N}f.
+u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_\mathbf{n} +\mathcal{N}f.
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the function <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> denotes the boundary data of <span class="math notranslate nohighlight">\(u\)</span> (or more precisely the trace of <span class="math notranslate nohighlight">\(u\)</span>), and <span class="math notranslate nohighlight">\(u_n\)</span> denotes the normal derivative of <span class="math notranslate nohighlight">\(u\)</span> on the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
+<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the function <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> denotes the boundary data of <span class="math notranslate nohighlight">\(u\)</span> (or more precisely the trace of <span class="math notranslate nohighlight">\(u\)</span>), and <span class="math notranslate nohighlight">\(u_\mathbf{n}\)</span> denotes the normal derivative of <span class="math notranslate nohighlight">\(u\)</span> on the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
 </div>
 </div>
 
