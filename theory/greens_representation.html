@@ -271,22 +271,22 @@
 <div class="section" id="the-divergence-theorem">
 <h2>The divergence theorem<a class="headerlink" href="#the-divergence-theorem" title="Permalink to this headline">¶</a></h2>
 <p>Our discussion starts with the divergence theorem. Assume that <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span> is a bounded domain with boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. For now we assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that <span class="math notranslate nohighlight">\(\Gamma\in C^2\)</span>. This means that in the neighborhood of each point <span class="math notranslate nohighlight">\(x\in\Gamma\)</span> we can find a local parameterisation of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>, which is twice continuously differentiable.</p>
-<p>The divergence theorem now states that for each continuously differentiable vector valued function <span class="math notranslate nohighlight">\(F\in\mathbb{R}^3\)</span> it holds that</p>
+<p>The divergence theorem now states that for each continuously differentiable vector valued function <span class="math notranslate nohighlight">\(\mathbf{F}\in\mathbb{R}^3\)</span> it holds that</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega} (\nabla \cdot F) dV = \int_{\Gamma} (F\cdot \mathbf{n})\,\mathrm{d}S.
+\int_{\Omega} (\nabla \cdot \mathbf{F})\,\mathrm{d}V = \int_{\Gamma} (\mathbf{P}\cdot \mathbf{n})\,\mathrm{d}S.
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(n\)</span> is the exterior normal at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The expression <span class="math notranslate nohighlight">\(\nabla\cdot F\)</span> on the left-hand side of the theorem is the divergence of <span class="math notranslate nohighlight">\(F\)</span>, also abbreviated <span class="math notranslate nohighlight">\(\text{div} F\)</span>. The divergence theorem motivates another definition of the divergence. Let <span class="math notranslate nohighlight">\(S_r\)</span> be a small sphere with radius <span class="math notranslate nohighlight">\(r\)</span> and center <span class="math notranslate nohighlight">\(x\)</span>. Then</p>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is the exterior normal at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The expression <span class="math notranslate nohighlight">\(\nabla\cdot \mathbf{F}\)</span> on the left-hand side of the theorem is the divergence of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, also abbreviated <span class="math notranslate nohighlight">\(\text{div} \mathbf{F}\)</span>. The divergence theorem motivates another definition of the divergence. Let <span class="math notranslate nohighlight">\(S_r\)</span> be a small sphere with radius <span class="math notranslate nohighlight">\(r\)</span> and center <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. Then</p>
 <div class="math notranslate nohighlight">
 \[
-\operatorname{div} F(x) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(F\cdot n)\,\mathrm{d}S.
+\operatorname{div} \mathbf{F}(\mathbf{x}) = \lim_{r\rightarrow 0}\frac{1}{|S_r|}\int_{\Gamma}(\mathbf{F}\cdot \mathbf{n})\,\mathrm{d}S.
 \]</div>
-<p>The divergence is positive if the field <span class="math notranslate nohighlight">\(F\)</span> is outward pointing at the point <span class="math notranslate nohighlight">\(x\)</span>. If the field at <span class="math notranslate nohighlight">\(x\)</span> is inward pointing the divergence is negative.</p>
+<p>The divergence is positive if the field <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is outward pointing at the point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. If the field at <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is inward pointing the divergence is negative.</p>
 </div>
 <div class="section" id="green-s-identities">
 <h2>Green’s identities<a class="headerlink" href="#green-s-identities" title="Permalink to this headline">¶</a></h2>
 <p>Based on the divergence theorem, we can now derive the Green’s identities.
-We start with the first Green’s identity. Let <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> be scalar functions with <span class="math notranslate nohighlight">\(u\)</span> continuously differentiable and <span class="math notranslate nohighlight">\(v\)</span> twice continuously differentiable. Choose <span class="math notranslate nohighlight">\(F = u\nabla v\)</span>. From the product rule of differentiation it follows that</p>
+We start with the first Green’s identity. Let <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> be scalar functions with <span class="math notranslate nohighlight">\(u\)</span> continuously differentiable and <span class="math notranslate nohighlight">\(v\)</span> twice continuously differentiable. Choose <span class="math notranslate nohighlight">\(\mathbf{F} = u\nabla v\)</span>. From the product rule of differentiation it follows that</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla \cdot (u\nabla v) = \nabla u \cdot \nabla v + u\Delta v.
@@ -296,16 +296,16 @@ We start with the first Green’s identity. Let <span class="math notranslate no
 \[
 \nabla\cdot(\nabla v) = \frac{\partial^2v}{\partial x^2} + \frac{\partial^2v}{\partial y^2} + \frac{\partial^2v}{\partial z^2}.
 \]</div>
-<p>Plugging <span class="math notranslate nohighlight">\(F = u\nabla v\)</span> into the divergence theorem we arrive at Green’s first identity, which states that</p>
+<p>Plugging <span class="math notranslate nohighlight">\(\mathbf{F} = u\nabla v\)</span> into the divergence theorem we arrive at Green’s first identity, which states that</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}}\,\mathrm{d}S.
+\int_{\Omega} u\Delta v + \nabla u\cdot \nabla v\,\mathrm{d}V = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}}\,\mathrm{d}S.
 \]</div>
-<p>The expression <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial \mathbf{n}} := \nabla v\cdot n\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>The expression <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial \mathbf{n}} := \nabla v\cdot \mathbf{n}\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>Now assume that also <span class="math notranslate nohighlight">\(u\)</span> is twice differentiable and swap the roles of <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> in Green’s first identity. Subtracting the two identities for <span class="math notranslate nohighlight">\(F=u\nabla v\)</span> and <span class="math notranslate nohighlight">\(F=v\nabla u\)</span> we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}} - v\frac{\partial u}{\partial \mathbf{n}}\,\mathrm{d}.
+\int_{\Omega}u\Delta v - v\Delta u\ dV = \int_{\Gamma} u\frac{\partial v}{\partial \mathbf{n}} - v\frac{\partial u}{\partial \mathbf{n}}\,\mathrm{d}S.
 \]</div>
 <p>This equation is called Green’s second identity.</p>
 </div>
