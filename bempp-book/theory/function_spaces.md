@@ -47,11 +47,7 @@ $$
 
 Hence, $H^{1/2}(\Gamma)$ consists of all functions that are the boundary values of functions in $H^1(\Omega)$. The index $1/2$ may seem strange. Functions in $H^1(\Omega)$ are 1 times weakly differentiable. The exponent $1/2$ denotes a half-order loss of smoothness. There are different ways to define fractional Sobolev spaces. But this is a technical topic, which we will not cover in more detail here. For our purpose the only relevance is that the space $H^{1/2}(\Omega)$ contains the boundary values of solutions to the Helmholtz equation.
 
-The other important boundary space is the space $H^{-1/2}(\Gamma)$. This space contains all normal derivatives of functions in $H^1(\Omega)$. We define the operator $\gamma_1$, which maps a function $u$ in $H^1(\Omega)$ to its normal derivative $u_n$ on $\Gamma$. Then 
-
-$$
-H^{-1/2}(\Gamma) := \gamma_1(H^{1}(\Omega)).
-$$
+The other important boundary space is the space $H^{-1/2}(\Gamma)$. The definition of this space is a bit more tricky. Loosely spoken, this space contains all normal derivatives of functions $u_{\Omega}$ satisfying the Helmholtz equation $Lu_{\Omega} = 0$.
 
 We will not go into details of the meaning of the exponent $-1/2$. An intuitive explanation is that taking derivatives reduces the order of a Sobolev space by $1$. The space of boundary traces has order $1/2$, and henceforth the space of normal derivatives has order one less, which is $-1/2$.
 
