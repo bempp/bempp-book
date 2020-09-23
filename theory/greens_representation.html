@@ -270,7 +270,7 @@
 <p>In this section, we will derive Green’s representation theorem, which allows us to represent solutions of certain types of partial differential equations using only values and derivatives on the boundary.</p>
 <div class="section" id="the-divergence-theorem">
 <h2>The divergence theorem<a class="headerlink" href="#the-divergence-theorem" title="Permalink to this headline">¶</a></h2>
-<p>Our discussion starts with the divergence theorem. Assume that <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span> is a bounded domain with boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. For now we assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that <span class="math notranslate nohighlight">\(\Gamma\in C^2\)</span>. This means that in the neighborhood of each point <span class="math notranslate nohighlight">\(x\in\Gamma\)</span> we can find a local parameterisation of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>, which is twice continuously differentiable.</p>
+<p>Our discussion starts with the divergence theorem. Assume that <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span> is a bounded domain with boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. For now we assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is sufficiently smooth so that the following statements remain valid. For simplicity, we can just assume that <span class="math notranslate nohighlight">\(\Gamma\in C^2\)</span>. This means that in the neighborhood of each point <span class="math notranslate nohighlight">\(\mathbf{x}\in\Gamma\)</span> we can find a local parameterisation of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>, which is twice continuously differentiable.</p>
 <p>The divergence theorem now states that for each continuously differentiable vector valued function <span class="math notranslate nohighlight">\(\mathbf{F}\in\mathbb{R}^3\)</span> it holds that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -314,47 +314,47 @@ We start with the first Green’s identity. Let <span class="math notranslate no
 <p>We can now derive Green’s representation theorem. We first need to derive the notion of a Green’s function. We consider the model PDE problem</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}u(y) = f(y),~y\in\Omega
+\mathcal{L}u(\mathbf{y}) = f(\mathbf{y}),\quad\mathbf{y}\in\Omega
 \]</div>
 <p>with <span class="math notranslate nohighlight">\(\mathcal{L} := -\Delta - k^2\)</span> and <span class="math notranslate nohighlight">\(f\)</span> a given scalar function. This equation is called the Helmholtz equation with wavenumber <span class="math notranslate nohighlight">\(k\)</span>. We allow <span class="math notranslate nohighlight">\(k\)</span> to take any value in the complex plane, including <span class="math notranslate nohighlight">\(0\)</span>. For <span class="math notranslate nohighlight">\(k=0\)</span> the equation reduces to the Poisson equation <span class="math notranslate nohighlight">\(-\Delta u = f\)</span>.</p>
-<p>We now introduce a special solution. Let <span class="math notranslate nohighlight">\(\delta_x(y)\)</span> be the shifted Dirac delta function with <span class="math notranslate nohighlight">\(\delta_x(y) = 0\)</span> for <span class="math notranslate nohighlight">\(x\neq y\)</span>.</p>
-<p>A Green’s function <span class="math notranslate nohighlight">\(g(x, y)\)</span> is a function that satisfies</p>
+<p>We now introduce a special solution. Let <span class="math notranslate nohighlight">\(\delta_\mathbf{x}(\mathbf{y})\)</span> be the shifted Dirac delta function with <span class="math notranslate nohighlight">\(\delta_\mathbf{x}(\mathbf{y}) = 0\)</span> for <span class="math notranslate nohighlight">\(\mathbf{x}\neq \mathbf{y}\)</span>.</p>
+<p>A Green’s function <span class="math notranslate nohighlight">\(g(\mathbf{x}, \mathbf{y})\)</span> is a function that satisfies</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}g(x, y) = \delta_y(x)
+\mathcal{L}g(\mathbf{x}, \mathbf{y}) = \delta_\mathbf{y}(\mathbf{x})
 \]</div>
 <p>in <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
-<p>Typically, for <span class="math notranslate nohighlight">\(g(x, y)\)</span> we choose the free space Green’s function that satisfies that equation in the whole of <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>. For the given Helmholtz equation the free space Green’s function is defined as</p>
+<p>Typically, for <span class="math notranslate nohighlight">\(g(\mathbf{x}, \mathbf{y})\)</span> we choose the free space Green’s function that satisfies that equation in the whole of <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>. For the given Helmholtz equation the free space Green’s function is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-g(x, y) = \frac{e^{\mathrm{i}k|x - y|}}{4\text{π}|x-y|}
+g(\mathbf{x}, \mathbf{y}) = \frac{e^{\mathrm{i}k|\mathrm{x} - \mathbf{y}|}}{4\text{π}|\mathbf{x}-\mathbf{y}|}
 \]</div>
 <p>Another valid definition is obtained by replacing <span class="math notranslate nohighlight">\(k\)</span> with <span class="math notranslate nohighlight">\(-k\)</span>. The choice of the sign determines what is considered to be an outgoing wave solution. We will come back to this topic later.</p>
-<p>For this function it holds for <span class="math notranslate nohighlight">\(x\neq y\)</span> that</p>
+<p>For this function it holds for <span class="math notranslate nohighlight">\(\mathbf{x}\neq \mathbf{y}\)</span> that</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta_yg(x, y) = k^2g(x, y),
+\Delta_\mathbf{y}g(\mathbf{x}, \mathbf{y}) = k^2g(\mathbf{x}, \mathbf{y}),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\Delta_y\)</span> denotes that we take the derivatives with respect to <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>We now apply Green’s second identity with <span class="math notranslate nohighlight">\(u(y)\)</span> being a solution of <span class="math notranslate nohighlight">\(\mathcal{L}u(y)=f(y)\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> and <span class="math notranslate nohighlight">\(v(y) = g(x, y)\)</span>. The resulting equation is</p>
+<p>where <span class="math notranslate nohighlight">\(\Delta_\mathbf{y}\)</span> denotes that we take the derivatives with respect to <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>.</p>
+<p>We now apply Green’s second identity with <span class="math notranslate nohighlight">\(u(\mathbf{y})\)</span> being a solution of <span class="math notranslate nohighlight">\(\mathcal{L}u(\mathbf{y})=f(\mathbf{y})\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> and <span class="math notranslate nohighlight">\(v(\mathbf{y}) = g(\mathbf{x}, \mathbf{y})\)</span>. The resulting equation is</p>
 <div class="math notranslate nohighlight">
 \[
-u(x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial \mathbf{n}(y)}\,\mathrm{d}S(y) - \int_{\Gamma} \frac{\partial g(x, y)}{\partial \mathbf{n}(y)} u(y)\,\mathrm{d}S(y) + \int_{\Omega}g(x, y)f(y)\,\mathrm{d}V(y).
+u(\mathbf{x}) = \int_{\Gamma}g(\mathbf{x}, \mathbf{y})\frac{\partial u}{\partial \mathbf{n}(\mathbf{y})}\,\mathrm{d}S(\mathbf{y}) - \int_{\Gamma} \frac{\partial g(\mathbf{x}, \mathbf{y})}{\partial \mathbf{n}(\mathbf{y})} u(\mathbf{y})\,\mathrm{d}S(\mathbf{y}) + \int_{\Omega}g(\mathbf{x}, \mathbf{y})f(\mathbf{y})\,\mathrm{d}V(\mathbf{y}).
 \]</div>
 <p>This is Green’s representation theorem. Let us consider the three appearing terms in some more detail. The first term is called the <strong>single-layer potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(\phi\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{V}\phi](x) = \int_{\Gamma}g(x, y)\frac{\partial u}{\partial \mathbf{n}(y)}\,\mathrm{d}S(y).
+[\mathcal{V}\phi](\mathbf{x}) = \int_{\Gamma}g(\mathbf{x}, \mathbf{y})\frac{\partial u}{\partial \mathbf{n}(\mathbf{y})}\,\mathrm{d}S(\mathbf{y}).
 \]</div>
 <p>The second term is called the <strong>double-layer potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(\psi\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{K}\psi](x) = \int_{\Gamma} \frac{\partial g(x, y)}{\partial \mathbf{n}(y)} u(y)\,\mathrm{d}S(y).
+[\mathcal{K}\psi](\mathbf{x}) = \int_{\Gamma} \frac{\partial g(\mathbf{x}, \mathbf{y})}{\partial \mathbf{n}(\mathbf{y})} u(\mathbf{y})\,\mathrm{d}S(\mathbf{y}).
 \]</div>
 <p>Finally, the third term is the <strong>Newton potential operator</strong>. For a given function <span class="math notranslate nohighlight">\(f\)</span> it is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-[\mathcal{N}f](x) = \int_{\Omega}g(x, y)f(y)\,\mathrm{d}V(y).
+[\mathcal{N}f](\mathbf{x}) = \int_{\Omega}g(\mathbf{x}, \mathbf{y})f(\mathbf{y})\,\mathrm{d}V(\mathbf{y}).
 \]</div>
 <p>With this notation, Green’s representation theorem has the compact form</p>
 <div class="math notranslate nohighlight">
