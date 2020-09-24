@@ -111,7 +111,7 @@ $$
 With this notation, Green's representation theorem has the compact form
 
 $$
-u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_\mathbf{n} +\mathcal{N}f.
+u_{\Omega} = \mathcal{V}u_{\mathbf{n}} - \mathcal{K}u_\Gamma +\mathcal{N}f.
 $$
 
 Here, $u_{\Omega}$ is the function $u$ inside $\Omega$, $u_{\Gamma}$ denotes the boundary data of $u$ (or more precisely the trace of $u$), and $u_\mathbf{n}$ denotes the normal derivative of $u$ on the boundary $\Gamma$.

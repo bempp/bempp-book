@@ -261,12 +261,25 @@
    <span class="math notranslate nohighlight">
     \(H^{-1/2}(\Omega)\)
    </span>
-   .
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#norms-inner-products-and-dual-pairings">
    Norms, inner products and dual pairings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-remark-on-the-smoothness-of-gamma">
+   A remark on the smoothness of
+   <span class="math notranslate nohighlight">
+    \(\Gamma\)
+   </span>
+   .
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-spaces-for-potential-operators">
+   Function spaces for potential operators
   </a>
  </li>
 </ul>
@@ -281,13 +294,22 @@
                 
   <div class="section" id="function-spaces-for-scalar-problems">
 <h1>Function Spaces for scalar problems<a class="headerlink" href="#function-spaces-for-scalar-problems" title="Permalink to this headline">¶</a></h1>
-<p>In <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a>, we derived Green’s representation theorem for Helmholtz type problems in three dimensions. In this section, we discuss in more detail what the correct function spaces for the various objects in Green’s representation theorem are. This is important for choosing the right type of discretisations in actual computations.</p>
+<p>In <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a>, we derived Green’s representation
+theorem for Helmholtz type problems in three dimensions. In this section, we
+discuss in more detail what the correct function spaces for the various objects
+in Green’s representation theorem are. This is important for choosing the right
+type of discretisations in actual computations.</p>
 <p>We recall Green’s representation theorem for the solution <span class="math notranslate nohighlight">\(u\)</span> of the PDE <span class="math notranslate nohighlight">\(-\Delta u-k^2u=f\)</span> in a domain <span class="math notranslate nohighlight">\(\Omega\subset\mathbb{R}^3\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
 u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_\mathbf{n} +\mathcal{N}f.
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the solution <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> and <span class="math notranslate nohighlight">\(u_\mathbf{n}\)</span> is the normal derivative of <span class="math notranslate nohighlight">\(u\)</span> at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The operators <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> are the single layer potential operator, double layer potential operator, and the Newton potential operator, respectively.</p>
+<p>Here, <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> is the solution <span class="math notranslate nohighlight">\(u\)</span> inside <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the
+restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> and <span class="math notranslate nohighlight">\(u_\mathbf{n}\)</span> is the
+normal derivative of <span class="math notranslate nohighlight">\(u\)</span> at the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>. The operators <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>,
+<span class="math notranslate nohighlight">\(\mathcal{K}\)</span>, and <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> are the single layer potential operator,
+double layer potential operator, and the Newton potential operator,
+respectively.</p>
 <p>In this section, we discuss the suitable function spaces for Green’s representation theorem to make sense.</p>
 <p>We start off with the solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> satisfying</p>
 <div class="math notranslate nohighlight">
@@ -300,30 +322,133 @@ u_{\Omega} = \mathcal{V}u_{\Gamma} - \mathcal{K}u_\mathbf{n} +\mathcal{N}f.
 \int_{\Omega}|\nabla u_{\Omega}|^2\,\mathrm{d}V - k^2\int_{\Omega} |u_{\Omega}|^2\,\mathrm{d}V - \int_{\Gamma}\overline{u_{\Gamma}}u_\mathbf{n}\,\mathrm{d}S = \int_{\Omega}\overline{u_{\Omega}}f\,\mathrm{d}V
 \]</div>
 <p>By <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> we denote the restriction of the domain solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
-<p>In order for this equation to make sense, we require all terms to be finite. This motivates the definition of the following spaces.</p>
 <div class="section" id="the-spaces-l-2-omega-and-h-1-omega">
 <h2>The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span><a class="headerlink" href="#the-spaces-l-2-omega-and-h-1-omega" title="Permalink to this headline">¶</a></h2>
-<p>We define:</p>
+<p>In order for <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> to make sense, we require all terms to be finite. This motivates the definition of the following spaces.</p>
+<p>We define the following two spaces:</p>
 <ul class="simple">
-<li><p>the space of square integrable functions <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> of all functions <span class="math notranslate nohighlight">\(v\)</span> that satisfy <span class="math notranslate nohighlight">\(\int_{\Omega}|v|^2\ dV &lt; \infty\)</span>.</p></li>
-<li><p>the space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> of all square integrable functions <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> that also have a square integrable derivative, that is <span class="math notranslate nohighlight">\(\int_{\Omega}|\nabla v|^2\ dV &lt; \infty\)</span>.</p></li>
+<li><p>The space of square integrable functions <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> of all functions <span class="math notranslate nohighlight">\(v\)</span> that satisfy <span class="math notranslate nohighlight">\(\int_{\Omega}|v|^2\ dV &lt; \infty\)</span>.</p></li>
+<li><p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> of all square integrable functions <span class="math notranslate nohighlight">\(v\)</span> in <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> that also have a square integrable derivative, that is <span class="math notranslate nohighlight">\(\int_{\Omega}|\nabla v|^2\ dV &lt; \infty\)</span>.</p></li>
 </ul>
-<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> is called a Sobolev space. The notion of derivative here is a bit more general than then standard notion of derivative. It only requires functions in the space to be weakly differentiable. While we want to avoid going into too much detail of weak differentiability, a very good example is the function <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> for <span class="math notranslate nohighlight">\(x\in [-1, 1]\)</span>. It is differentiable for <span class="math notranslate nohighlight">\(x\neq 0\)</span>, but not at the point <span class="math notranslate nohighlight">\(x=0\)</span>. However, it is still weakly differentiable. The derivative is well defined for all points <span class="math notranslate nohighlight">\(x\neq 0\)</span>, and at zero we can assign the derivative any finite value to obtain <span class="math notranslate nohighlight">\(\int_{[-1, 1]} |\nabla f(x)|^2\,\mathrm{d}x &lt; \infty\)</span>.</p>
-<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> can also be interpreted as a space of functions with bounded energy. It therefore makes physical sense to look for solutions in this space, and indeed it is the right space of functions for Helmholtz problems. This might be surprising as the original Helmholtz equation requires the solution to be twice differentiable. But we have seen that the second derivative disappears after integration by parts and this trick allows the treatment of larger classes of problems than just those where a second derivative exists in a strong classical sense. This is not artifical but involves problems in domains with corners or where the forcing term <span class="math notranslate nohighlight">\(f\)</span> on the right-hand side is just a point load.</p>
+<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> is called a Sobolev space. The notion of derivative
+here is a bit more general than then standard notion of derivative. It only
+requires functions in the space to be weakly differentiable. While we want to
+avoid going into too much detail of weak differentiability, a very good example
+is the function <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> for <span class="math notranslate nohighlight">\(x\in [-1, 1]\)</span>. It is differentiable for
+<span class="math notranslate nohighlight">\(x\neq 0\)</span>, but not at the point <span class="math notranslate nohighlight">\(x=0\)</span>. However, it is still weakly
+differentiable. The derivative is well defined for all points <span class="math notranslate nohighlight">\(x\neq 0\)</span>, and at
+zero we can assign the derivative any finite value to obtain <span class="math notranslate nohighlight">\(\int_{[-1, 1]}
+|\nabla f(x)|^2\,\mathrm{d}x &lt; \infty\)</span>.</p>
+<p>The space <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> can also be interpreted as a space of functions with
+bounded energy. It therefore makes physical sense to look for solutions in this
+space, and indeed it is the right space of functions for Helmholtz problems.
+This might be surprising as the original Helmholtz equation requires the
+solution to be twice differentiable. But we have seen that the second
+derivative disappears after integration by parts and this trick allows the
+treatment of larger classes of problems than just those where a second
+derivative exists in a strong classical sense. This is not artifical but
+involves problems in domains with corners or where the forcing term <span class="math notranslate nohighlight">\(f\)</span> on the
+right-hand side is just a point load.</p>
 </div>
 <div class="section" id="the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
-<h2>The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span>.<a class="headerlink" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega" title="Permalink to this headline">¶</a></h2>
+<h2>The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span><a class="headerlink" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega" title="Permalink to this headline">¶</a></h2>
 <p>We have not yet discussed the spaces associated with the term <span class="math notranslate nohighlight">\(\int_{\Gamma}u_{\Gamma}u_\mathbf{n}\)</span> in <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a>. The function <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to <span class="math notranslate nohighlight">\(\Gamma\)</span>. It is possible to define a trace operator <span class="math notranslate nohighlight">\(\gamma_0\)</span>, which maps functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> to the values on the boundary. We define the space <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> as the range of this operator, that is</p>
 <div class="math notranslate nohighlight">
 \[
 H^{1/2}(\Gamma) := \gamma_0(H^{1}(\Omega)).
 \]</div>
-<p>Hence, <span class="math notranslate nohighlight">\(H^{1/2}(\Gamma)\)</span> consists of all functions that are the boundary values of functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span>. The index <span class="math notranslate nohighlight">\(1/2\)</span> may seem strange. Functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> are 1 times weakly differentiable. The exponent <span class="math notranslate nohighlight">\(1/2\)</span> denotes a half-order loss of smoothness. There are different ways to define fractional Sobolev spaces. But this is a technical topic, which we will not cover in more detail here. For our purpose the only relevance is that the space <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> contains the boundary values of solutions to the Helmholtz equation.</p>
-<p>The other important boundary space is the space <span class="math notranslate nohighlight">\(H^{-1/2}(\Gamma)\)</span>. The definition of this space is a bit more tricky. Loosely spoken, this space contains all normal derivatives of functions <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> satisfying the Helmholtz equation <span class="math notranslate nohighlight">\(Lu_{\Omega} = 0\)</span>.</p>
-<p>We will not go into details of the meaning of the exponent <span class="math notranslate nohighlight">\(-1/2\)</span>. An intuitive explanation is that taking derivatives reduces the order of a Sobolev space by <span class="math notranslate nohighlight">\(1\)</span>. The space of boundary traces has order <span class="math notranslate nohighlight">\(1/2\)</span>, and henceforth the space of normal derivatives has order one less, which is <span class="math notranslate nohighlight">\(-1/2\)</span>.</p>
+<p>Hence, <span class="math notranslate nohighlight">\(H^{1/2}(\Gamma)\)</span> consists of all functions that are the boundary values
+of functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span>. The index <span class="math notranslate nohighlight">\(1/2\)</span> may seem strange. Functions in
+<span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> are 1 times weakly differentiable. The exponent <span class="math notranslate nohighlight">\(1/2\)</span> denotes a
+half-order loss of smoothness. There are different ways to define fractional
+Sobolev spaces. But this is a technical topic, which we will not cover in more
+detail here. For our purpose the only relevance is that the space
+<span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> contains the boundary values of solutions to the Helmholtz
+equation.</p>
+<p>The other important boundary space is the space <span class="math notranslate nohighlight">\(H^{-1/2}(\Gamma)\)</span>. The
+definition of this space is a bit more tricky. Loosely spoken, this space
+contains all normal derivatives of functions <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> satisfying the
+Helmholtz equation <span class="math notranslate nohighlight">\(Lu_{\Omega} = 0\)</span>.</p>
+<p>We will not go into details of the meaning of the exponent <span class="math notranslate nohighlight">\(-1/2\)</span>. An intuitive
+explanation is that taking derivatives reduces the order of a Sobolev space by
+<span class="math notranslate nohighlight">\(1\)</span>. The space of boundary traces has order <span class="math notranslate nohighlight">\(1/2\)</span>, and henceforth the space of
+normal derivatives has order one less, which is <span class="math notranslate nohighlight">\(-1/2\)</span>.</p>
 </div>
 <div class="section" id="norms-inner-products-and-dual-pairings">
 <h2>Norms, inner products and dual pairings<a class="headerlink" href="#norms-inner-products-and-dual-pairings" title="Permalink to this headline">¶</a></h2>
+<p>Consider that we have computed some approximate solution <span class="math notranslate nohighlight">\(\tilde{u_{\Omega}}\)</span>
+to an exact solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span>. We would like to quantify the error
+<span class="math notranslate nohighlight">\(e_{\Omega} := \tilde{u_{\Omega}} - u_{\Omega}\)</span>. A typical measure here is the
+square integral of the function, giving us the definition</p>
+<div class="math notranslate nohighlight">
+\[
+\|u\|_{\Omega} := \left[\int_{\Omega}|u(x)|^2\ dx\right]^{1/2}.
+\]</div>
+<p>Closely associated with this norm is the definition of the <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> inner product</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u, v\rangle_{\Omega} := \int_{\Omega} u(x)\overline{v(x)}\ dx.
+\]</div>
+<p>From this it follows that <span class="math notranslate nohighlight">\(\|u\|_{\Omega}^2 = \left[\langle u, u \rangle_{\Omega}\right]^{1/2}\)</span>.</p>
+<p>Similarly, we define the <span class="math notranslate nohighlight">\(L^2(\Gamma)\)</span> inner product over the boundary as</p>
+<div class="math notranslate nohighlight">
+\[
+\|u\|_{\Gamma} := \left[\int_{\Gamma}|u(x)|^2\ dx\right]^{1/2}.
+\]</div>
+<p>The related inner product definition is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle u, v\rangle_{\Gamma} := \int_{\Gamma} u(x)\overline{v(x)}\ dx.
+\]</div>
+<p>Finally, we want to briefly talk about dual pairings. In
+<a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> we have two dual pairings. These are the terms
+<span class="math notranslate nohighlight">\(\int_{\Gamma}\overline{u_{\Gamma}}u_n\ dS\)</span> and
+<span class="math notranslate nohighlight">\(\int_{\Omega}\overline{u_{\Omega}}f\ dV\)</span>. These look like the <span class="math notranslate nohighlight">\(L^2\)</span> inner
+products that we just defined, and in terms of practical implementation we will
+treat them like this. Nevertheless, the definition is a bit more subtle. The
+function <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the trace of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span>. Hence <span class="math notranslate nohighlight">\(u_{\Gamma}\in
+H^{1/2}(\Omega)\)</span>. However, as stated above the normal derivative <span class="math notranslate nohighlight">\(u_n\)</span> is in
+the space <span class="math notranslate nohighlight">\(H^{-1/2}(\Gamma)\)</span>. The question is whether this is well defined, and
+indeed it is. A dual pairing is a generalisation of <span class="math notranslate nohighlight">\(L^2\)</span> inner products to
+situations when the functions are in these opposite spaces. Practically, for
+implementation purposes we treat this like any other <span class="math notranslate nohighlight">\(L^2\)</span> inner product. But
+mathematically the definition is more general. Indeed, a precise definition of
+the space <span class="math notranslate nohighlight">\(H^{-1/2}(\Gamma)\)</span> is that it is the space of all bounded
+sesquilinear (linear, but taking complex conjugation into account) maps from
+<span class="math notranslate nohighlight">\(H^{1/2}(\Gamma)\)</span> into the complex numbers. We say that a function <span class="math notranslate nohighlight">\(v\in
+H^{-1/2}(\Gamma)\)</span> if the sesquilinear map</p>
+<div class="math notranslate nohighlight">
+\[
+\ell_v(u) :=\int_{\Gamma}v(x)\overline{u}(x)
+\]</div>
+<p>is well defined and bounded for <span class="math notranslate nohighlight">\(u\in H^{1/2}(\Gamma)\)</span>.</p>
+<p>Correspondingly, in <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> the pairing <span class="math notranslate nohighlight">\(\int_{\Omega}\overline{u_{\Omega}}f\ dV\)</span> is between a function <span class="math notranslate nohighlight">\(u\in H^1{\Omega}\)</span> and an object <span class="math notranslate nohighlight">\(f\)</span> in the dual space <span class="math notranslate nohighlight">\(H^{-1}(\Omega)\)</span>.</p>
+</div>
+<div class="section" id="a-remark-on-the-smoothness-of-gamma">
+<h2>A remark on the smoothness of <span class="math notranslate nohighlight">\(\Gamma\)</span>.<a class="headerlink" href="#a-remark-on-the-smoothness-of-gamma" title="Permalink to this headline">¶</a></h2>
+<p>For the derivation of Green’s representation theorem we assumed that the
+boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> of <span class="math notranslate nohighlight">\(\Omega\)</span> is sufficiently smooth and stated that it is
+enough to be twice differentiable. Indeed, this condition can be weakened quite
+substantially. It is sufficient to assume that <span class="math notranslate nohighlight">\(\Gamma\)</span> is a Lipschitz
+boundary. While the actual definition is quite intricate, for most practical
+purposes it is enough to think of <span class="math notranslate nohighlight">\(\Omega\)</span> as a bounded domain whose boundary
+<span class="math notranslate nohighlight">\(\Gamma\)</span> is piecewise smooth with no cusps or slits.</p>
+</div>
+<div class="section" id="function-spaces-for-potential-operators">
+<h2>Function spaces for potential operators<a class="headerlink" href="#function-spaces-for-potential-operators" title="Permalink to this headline">¶</a></h2>
+<p>We recall Green’s representation theorem from <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[
+u_{\Omega} = \mathcal{V}u_{\mathbf{n}} - \mathcal{K}u_\Gamma +\mathcal{N}f.
+\]</div>
+<p>Let us know introduce the correct function spaces for the single-layer potential operator <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>, the double-layer potential operator <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>, and the Newton potential <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p>
+<p>Remember that from the discussion in this section we have <span class="math notranslate nohighlight">\(u_{\Omega}\in H^1(\Omega)\)</span>, <span class="math notranslate nohighlight">\(u_{\Gamma}\in H^{1/2}(\Gamma)\)</span>, <span class="math notranslate nohighlight">\(u_\mathbf{n}\in H^{-1/2}(\Gamma)\)</span>, <span class="math notranslate nohighlight">\(f\in H^{-1}(\Omega)\)</span>.</p>
+<p>It follows that we require the potential operators to satisfy the following mapping properties:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{V}:\ H^{-1/2}(\Gamma)\rightarrow H^{1}(\Omega)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{K}:\ H^{-1/2}(\Gamma)\rightarrow H^{1}(\Omega)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{N}:\ H^{-1}(\Omega)\rightarrow H^{1}(\Omega)\)</span></p></li>
+</ul>
 </div>
 </div>
 
