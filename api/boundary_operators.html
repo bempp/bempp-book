@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html>
@@ -7,26 +6,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boundary Operators &#8212; The Bempp Book</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -40,11 +58,11 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sparse Boundary Operators" href="sparse_boundary_operators.html" />
+    <link rel="next" title="Linear Solvers" href="solvers.html" />
     <link rel="prev" title="Grid Functions" href="grid_functions.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
@@ -75,22 +93,19 @@
   <h1 class="site-logo" id="site-title">The Bempp Book</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   API Overview
  </span>
@@ -115,38 +130,6 @@
   <a class="current reference internal" href="#">
    Boundary Operators
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sparse_boundary_operators.html">
-     Sparse Boundary Operators
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="laplace_boundary_operators.html">
-     Boundary Operators for Laplace’s Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="helmholtz_boundary_operators.html">
-     Boundary Operators for the Helmholtz Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="modified_helmholtz_boundary_operators.html">
-     Boundary Operators for the Modified Helmholtz Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="maxwell_boundary_operators.html">
-     Boundary Operators for Maxwell’s Equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="operator_algebra.html">
-     Operator Algebra
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="solvers.html">
@@ -159,7 +142,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   A dive into the Bempp core routines
  </span>
@@ -171,7 +154,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Mathematical background of boundary integral equations
  </span>
@@ -189,9 +172,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -220,11 +201,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -236,8 +217,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -258,7 +239,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -267,6 +249,7 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -277,9 +260,40 @@
    Domains, ranges, and duals
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparse-boundary-operators">
+   Sparse Boundary Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-operators-for-laplace-s-equation">
+   Boundary Operators for Laplace’s Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-operators-for-the-helmholtz-equation">
+   Boundary Operators for the Helmholtz Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-operators-for-the-modified-helmholtz-equation">
+   Boundary Operators for the Modified Helmholtz Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-operators-for-maxwell-s-equations">
+   Boundary Operators for Maxwell’s Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operator-algebra">
+   Operator Algebra
+  </a>
+ </li>
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -292,14 +306,352 @@
 <p>Boundary integral formulations of problems are commonly written using boundary integral operators.
 In this section of the Bempp Handbook, we look at how these operators can be defined and
 assembled using Bempp.</p>
+<p>Full documentation of Bempp boundary operators can be found on <a class="reference external" href="https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/operators/index.html">Read the Docs</a>.</p>
 <div class="section" id="domains-ranges-and-duals">
 <h2>Domains, ranges, and duals<a class="headerlink" href="#domains-ranges-and-duals" title="Permalink to this headline">¶</a></h2>
 <p>When creating an operator in Bempp, three spaces are provided: the domain, the range, and the
 dual to the range (given as inputs in that order). The domain and dual spaces are used to
 calculate the weak form of the operator. The range is used by the
-<a class="reference internal" href="operator_algebra.html"><span class="doc std std-doc">operator algebra</span></a> to correctly assemble product of operators.</p>
-<div class="toctree-wrapper compound">
+<a class="reference external" href="#operator-algebra">operator algebra</a> to correctly assemble product of operators.</p>
 </div>
+<div class="section" id="sparse-boundary-operators">
+<h2>Sparse Boundary Operators<a class="headerlink" href="#sparse-boundary-operators" title="Permalink to this headline">¶</a></h2>
+<p>Discretising the identity operator leads to a matrix <span class="math notranslate nohighlight">\(M=(m_{ij})\)</span>, defined by</p>
+<div class="math notranslate nohighlight">
+\[
+m_{ij}=\int_\Gamma\phi_j\cdot\overline{\psi_i},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces respectively.
+As this integral will only be non-zero when the basis functions overlap, the resulting
+matrix will be sparse.</p>
+<p>The identity operator can be created in Bempp using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ident</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">SparseDiscreteBoundaryOperator</span></code> can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">ident</span><span class="o">.</span><span class="n">weak_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This matrix is commonly called the mass matrix between the domain and dual spaces.</p>
+<p>If desiried, a SciPy CSR matrix can be obtained from this discrete boundary operator with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span><span class="o">.</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-operators-for-laplace-s-equation">
+<h2>Boundary Operators for Laplace’s Equation<a class="headerlink" href="#boundary-operators-for-laplace-s-equation" title="Permalink to this headline">¶</a></h2>
+<p>For Laplace’s equation, there are four boundary operators that are used, as given in the table
+below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Matrix entries</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{V}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}G(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Adjoint double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}'\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hypersingular</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{W}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In each case,  <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces (respectively),
+and <span class="math notranslate nohighlight">\(G(\mathbf{x},\mathbf{y})\)</span> is the Green’s function for Laplace’s equation.
+The Green’s function will have a singularity when <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{y}\)</span>, so internally Bempp will
+use appropriate singular quadrature rules to handle this.</p>
+<p>These operators can be initialised in Bempp using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bempp.api.operators.boundary</span> <span class="kn">import</span> <span class="n">laplace</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">)</span>
+<span class="n">double</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">)</span>
+<span class="n">adjoint_d</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">adjoint_double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">)</span>
+<span class="n">hypersingular</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">hypersingular</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The spaces passed into each operator should be appropriately chosen
+<a class="reference external" href="function_spaces.md#scalar-function-spaces">scalar function spaces</a>.</p>
+<p>A keyword argument <code class="docutils literal notranslate"><span class="pre">assembler</span></code> may be passed into each constructor to change the assembler
+used to assemble the operator. For example, the single layer operator will be discretised using
+the fast multipole method (FMM) if it is initialised with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;fmm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When using dense assembly, the keyword argument <code class="docutils literal notranslate"><span class="pre">device_interface</span></code> can be used to switch
+between assembly using OpenCL and Numba:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;numba&quot;</span>
+    <span class="p">)</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">laplace</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;opencl&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Options for controlling which device OpenCL will use can be found in the
+<a class="reference external" href="../core/assembling_operators.md#assembling-on-different-devices">Assembling Operators</a>
+section of the documentation of the core.</p>
+<p>The matrix discretisation of an operator can be obtained using, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">weak_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The strong form discretisation of an operator can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">strong_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The interpretation of the strong form is discussed in the <a class="reference external" href="boundar_operators.md#operator-algebra">operator algebra</a>
+section.</p>
+</div>
+<div class="section" id="boundary-operators-for-the-helmholtz-equation">
+<h2>Boundary Operators for the Helmholtz Equation<a class="headerlink" href="#boundary-operators-for-the-helmholtz-equation" title="Permalink to this headline">¶</a></h2>
+<p>For the Helmholtz equation, there are four boundary operators that are used, as given in the table
+below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Matrix entries</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{V}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}G_k(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Adjoint double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}'\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hypersingular</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{W}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_k(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In each case,  <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces (respectively),
+and <span class="math notranslate nohighlight">\(G_k(\mathbf{x},\mathbf{y})\)</span> is the Green’s function for the Helmholtz equation with
+wavenumber <span class="math notranslate nohighlight">\(k\)</span>.
+The Green’s function will have a singularity when <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{y}\)</span>, so internally Bempp will
+use appropriate singular quadrature rules to handle this.</p>
+<p>These operators can be initialised in Bempp using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bempp.api.operators.boundary</span> <span class="kn">import</span> <span class="n">helmholtz</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+<span class="n">double</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+<span class="n">adjoint_d</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">adjoint_double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+<span class="n">hypersingular</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">hypersingular</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The spaces passed into each operator should be appropriately chosen
+<a class="reference external" href="function_spaces.md#scalar-function-spaces">scalar function spaces</a>.</p>
+<p>A keyword argument <code class="docutils literal notranslate"><span class="pre">assembler</span></code> may be passed into each constructor to change the assembler
+used to assemble the operator. For example, the single layer operator will be discretised using
+the fast multipole method (FMM) if it is initialised with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;fmm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When using dense assembly, the keyword argument <code class="docutils literal notranslate"><span class="pre">device_interface</span></code> can be used to switch
+between assembly using OpenCL and Numba:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;numba&quot;</span>
+    <span class="p">)</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;opencl&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The matrix discretisation of an operator can be obtained using, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">weak_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The strong form discretisation of an operator can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">strong_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The interpretation of the strong form is discussed in the <a class="reference external" href="#operator-algebra">operator algebra</a>
+section.</p>
+</div>
+<div class="section" id="boundary-operators-for-the-modified-helmholtz-equation">
+<h2>Boundary Operators for the Modified Helmholtz Equation<a class="headerlink" href="#boundary-operators-for-the-modified-helmholtz-equation" title="Permalink to this headline">¶</a></h2>
+<p>For the modified Helmholtz equation, there are four boundary operators that are used, as given in the table
+below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Matrix entries</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{V}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}G_\omega(\mathbf{x},\mathbf{y})\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_\omega(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Adjoint double layer</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{K}'\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=\int_{\Gamma}\int_{\Gamma}\frac{\partial G_\omega(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hypersingular</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{W}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=-\int_{\Gamma}\int_{\Gamma}\frac{\partial^2 G_\omega(\mathbf{x},\mathbf{y})}{\partial\mathbf{\nu}_{\mathbf{y}}\partial\mathbf{\nu}_{\mathbf{x}}}\phi_j(\mathbf{y})\psi_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In each case,  <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces (respectively),
+and <span class="math notranslate nohighlight">\(G_\omega(\mathbf{x},\mathbf{y})\)</span> is the Green’s function for the modified Helmholtz equation with
+frequency <span class="math notranslate nohighlight">\(\omega\)</span>.
+The Green’s function will have a singularity when <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{y}\)</span>, so internally Bempp will
+use appropriate singular quadrature rules to handle this.</p>
+<p>These operators can be initialised in Bempp using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bempp.api.operators.boundary</span> <span class="kn">import</span> <span class="n">modified_helmholtz</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">double</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">adjoint_d</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">adjoint_double_layer</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">hypersingular</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">hypersingular</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">omega</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The spaces passed into each operator should be appropriately chosen
+<a class="reference external" href="function_spaces.md#scalar-function-spaces">scalar function spaces</a>.</p>
+<p>A keyword argument <code class="docutils literal notranslate"><span class="pre">assembler</span></code> may be passed into each constructor to change the assembler
+used to assemble the operator. For example, the single layer operator will be discretised using
+the fast multipole method (FMM) if it is initialised with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;fmm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When using dense assembly, the keyword argument <code class="docutils literal notranslate"><span class="pre">device_interface</span></code> can be used to switch
+between assembly using OpenCL and Numba:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;numba&quot;</span>
+    <span class="p">)</span>
+<span class="n">single</span> <span class="o">=</span> <span class="n">modified_helmholtz</span><span class="o">.</span><span class="n">single_layer</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;opencl&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The matrix discretisation of an operator can be obtained using, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">weak_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The strong form discretisation of an operator can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">single</span><span class="o">.</span><span class="n">strong_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The interpretation of the strong form is discussed in the <a class="reference external" href="#operator-algebra">operator algebra</a>
+section.</p>
+</div>
+<div class="section" id="boundary-operators-for-maxwell-s-equations">
+<h2>Boundary Operators for Maxwell’s Equations<a class="headerlink" href="#boundary-operators-for-maxwell-s-equations" title="Permalink to this headline">¶</a></h2>
+<p>For Maxwell’s equations, there are two boundary operators that are used, as given in the table
+below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Matrix entries</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Electric field</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{E}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=-\mathrm{i}k\int_\Gamma\int_\Gamma G_k(\mathbf{x},\mathbf{y})\mathbf{\phi}_j(\mathbf{y})\cdot\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x}-\frac{1}{\mathrm{i}k}\int_\Gamma\int_\Gamma G_k(\mathrm{x},\mathrm{y})\nabla_\Gamma\mathbf{\phi}_j(\mathbf{y})\nabla_\Gamma\mathbf{\psi}_i(\mathbf{x})\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Magnetic field</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathsf{H}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(m_{ij}=-\int_\Gamma\int_\Gamma\nabla_\mathbf{x}G_k(\mathbf{x},\mathbf{y})\cdot(\mathbf{\psi}_j(\mathbf{y})\times\mathbf{\psi}_i(\mathbf{x}))\,\mathrm{d}\mathbf{y}\,\mathrm{d}\mathbf{x})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In each case,  <span class="math notranslate nohighlight">\(\phi_j\)</span> and <span class="math notranslate nohighlight">\(\psi_i\)</span> are the basis functions of the domain and dual spaces (respectively),
+and <span class="math notranslate nohighlight">\(G_k(\mathbf{x},\mathbf{y})\)</span> is the Green’s function for the Helmholtz equation with
+wavenumber <span class="math notranslate nohighlight">\(k\)</span>.
+The Green’s function will have a singularity when <span class="math notranslate nohighlight">\(\mathbf{x}=\mathbf{y}\)</span>, so internally Bempp will
+use appropriate singular quadrature rules to handle this.</p>
+<p>These operators can be initialised in Bempp using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bempp.api.operators.boundary</span> <span class="kn">import</span> <span class="n">maxwell</span>
+<span class="n">electric</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">electric_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+<span class="n">magnetic</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">magnetic_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The spaces passed into each operator should be appropriately chosen
+<a class="reference external" href="function_spaces.md#vector-function-spaces">vector function spaces</a>: the domain and range spaces
+should both be Hdiv spaces, while the dual space should be a Hcurl space.</p>
+<p>A keyword argument <code class="docutils literal notranslate"><span class="pre">assembler</span></code> may be passed into each constructor to change the assembler
+used to assemble the operator. For example, the electric field operator will be discretised using
+the fast multipole method (FMM) if it is initialised with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">electric</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">electric_field</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;fmm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When using dense assembly, the keyword argument <code class="docutils literal notranslate"><span class="pre">device_interface</span></code> can be used to switch
+between assembly using OpenCL and Numba:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">electric</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">electric_field</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;numba&quot;</span>
+    <span class="p">)</span>
+<span class="n">electric</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">electric_field</span><span class="p">(</span>
+    <span class="n">domain</span><span class="p">,</span> <span class="n">range_</span><span class="p">,</span> <span class="n">dual</span><span class="p">,</span> <span class="n">wavenumber</span><span class="p">,</span> <span class="n">assembler</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">,</span>
+    <span class="n">device_interface</span><span class="o">=</span><span class="s2">&quot;opencl&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The matrix discretisation of an operator can be obtained using, for example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">electric</span><span class="o">.</span><span class="n">weak_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The strong form discretisation of an operator can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">electric</span><span class="o">.</span><span class="n">strong_form</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The interpretation of the strong form is discussed in the <a class="reference external" href="#operator-algebra">operator algebra</a>
+section. For Maxwell’s equations, care must be taken to use space for the range and dual spaces
+that form a stable dual pairing (see the <a class="reference external" href="function_spaces.md#vector-function-spaces">vector function spaces</a>
+section) in order to be able to correctly obtain the strong form of an operator.</p>
+</div>
+<div class="section" id="operator-algebra">
+<h2>Operator Algebra<a class="headerlink" href="#operator-algebra" title="Permalink to this headline">¶</a></h2>
+<p>In many boundary element method applications, a discretisation of the product of two operators
+is required.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathsf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathsf{B}\)</span> be two operators with discretisations <span class="math notranslate nohighlight">\(A_h\)</span> and <span class="math notranslate nohighlight">\(B_h\)</span>.
+A discretisation of the product <span class="math notranslate nohighlight">\(\mathsf{A}\mathsf{B}\)</span> is given by <span class="math notranslate nohighlight">\(A_hM^{-1}B_h\)</span>,
+where <span class="math notranslate nohighlight">\(M\)</span> is the mass matrix between the range and dual of the operator <span class="math notranslate nohighlight">\(\mathsf{B}\)</span>.</p>
+<p>In Bempp, the discrete product of two operators can be formed using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">op1</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">boundary</span><span class="o">...</span>
+<span class="n">op2</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">operators</span><span class="o">.</span><span class="n">boundary</span><span class="o">...</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">op1</span> <span class="o">*</span> <span class="n">op2</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">product.weak_form()</span></code> is called, Bempp will internally use its knowledge of the range space
+of <code class="docutils literal notranslate"><span class="pre">op2</span></code> to correctly from the discretisation of this product.</p>
+<p>Calling the <code class="docutils literal notranslate"><span class="pre">strong_form</span></code> of an operator <span class="math notranslate nohighlight">\(\mathsf{B}\)</span> will return the product
+<span class="math notranslate nohighlight">\(M^{-1}B_h\)</span>. Calling <code class="docutils literal notranslate"><span class="pre">product.weak_form()</span></code> is equivalent to calculating
+<code class="docutils literal notranslate"><span class="pre">op1.weak_form()</span> <span class="pre">*</span> <span class="pre">op2.strong_form()</span></code>. Using the strong form of operators can in general
+be useful, as the discretisation obtained corresponds to a mass matrix preconditioned
+version of the relevant formulation.</p>
 </div>
 </div>
 
@@ -332,7 +684,7 @@ calculate the weak form of the operator. The range is used by the
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="grid_functions.html" title="previous page">Grid Functions</a>
-    <a class='right-next' id="next-link" href="sparse_boundary_operators.html" title="next page">Sparse Boundary Operators</a>
+    <a class='right-next' id="next-link" href="solvers.html" title="next page">Linear Solvers</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -351,7 +703,10 @@ calculate the weak form of the operator. The range is used by the
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>

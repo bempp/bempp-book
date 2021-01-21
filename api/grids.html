@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html>
@@ -7,26 +6,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grids &#8212; The Bempp Book</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -40,11 +58,11 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Overview" href="creating_grids.html" />
+    <link rel="next" title="Function Spaces" href="function_spaces.html" />
     <link rel="prev" title="Introduction" href="../intro.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
@@ -75,22 +93,19 @@
   <h1 class="site-logo" id="site-title">The Bempp Book</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   API Overview
  </span>
@@ -100,18 +115,6 @@
   <a class="current reference internal" href="#">
    Grids
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="creating_grids.html">
-     Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="using_grids.html">
-     Using Grids
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="function_spaces.html">
@@ -139,7 +142,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   A dive into the Bempp core routines
  </span>
@@ -151,7 +154,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Mathematical background of boundary integral equations
  </span>
@@ -169,9 +172,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -200,11 +201,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -216,8 +217,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -238,7 +239,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -247,12 +249,55 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#built-in-grids">
+     Built-in grids
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-a-grid">
+     Importing a grid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-grid-from-element-data">
+     Creating a grid from element data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-grids">
+   Using Grids
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#querying-grid-information">
+     Querying grid information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-and-exporting-grids">
+     Plotting and exporting grids
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -266,8 +311,178 @@
 (or mesh) on which the problem will be discretised.
 In Bempp, the grid will be a triangulation of a 2D surface in 3D space.
 Bempp currently only supports grids consisting of flat surface triangles.</p>
-<p>This section looks at how grids can be created and used in Bempp.</p>
-<div class="toctree-wrapper compound">
+<p>This section looks at how grids can be created and used in Bempp. Full documentation of
+the functionality of Bempp grids can be found on <a class="reference external" href="https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/grid/index.html">Read the Docs</a>.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A Bempp grid can be created using a built-in grid, by importing a gmsh file,
+or by providing the grid data.</p>
+<p>We first import Bempp and NumPy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bempp.api</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<div class="section" id="built-in-grids">
+<h3>Built-in grids<a class="headerlink" href="#built-in-grids" title="Permalink to this headline">¶</a></h3>
+<p>Various shapes are included in the <code class="docutils literal notranslate"><span class="pre">bempp.api.shapes</span></code> module, and discretisations with
+different numbers of elements can be created using these.
+In order for the these built-in grids to work, Gmsh must be
+installed and the command <code class="docutils literal notranslate"><span class="pre">gmsh</span></code> must be available in the path.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">regular_sphere</span></code> creates a sphere by refining a
+base octahedron. The number of elements in the sphere is given by
+<span class="math notranslate nohighlight">\(8 \times 4^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the refinement level.
+The following command creates a triangulation of a sphere with refinement level 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">regular_sphere</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">sphere</span></code> creates a sphere with a chosen element size.
+The following command creates a sphere with element diameter <span class="math notranslate nohighlight">\(h=0.1\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">sphere</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">cube</span></code> creates a cube with a chosen element size.
+The following command creates a cube with element diameter <span class="math notranslate nohighlight">\(h=0.3\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Full automatically-generated documentation of Bempp’s available built-in grids can be found
+<a class="reference external" href="https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/shapes/index.html">here</a>.</p>
+</div>
+<div class="section" id="importing-a-grid">
+<h3>Importing a grid<a class="headerlink" href="#importing-a-grid" title="Permalink to this headline">¶</a></h3>
+<p>Grids can be importedusing Bempp’s <code class="docutils literal notranslate"><span class="pre">import_grid</span></code> command.
+For example, the following command will load a grid from the Gmsh file <code class="docutils literal notranslate"><span class="pre">my_grid.msh</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">import_grid</span><span class="p">(</span><span class="s1">&#39;my_grid.msh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bempp uses the file ending to recognise a number of grid formats.
+Importing grids is handled by the <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a> library.</p>
+<p>This works through the external <code class="docutils literal notranslate"><span class="pre">meshio</span></code> library.
+A list of all files types that can be imported can be found in the meshio documentation.
+Frequently used formats with Bempp are <code class="docutils literal notranslate"><span class="pre">.msh</span></code> (Gmsh),
+<code class="docutils literal notranslate"><span class="pre">.vtk</span></code> (Legacy VTK), and <code class="docutils literal notranslate"><span class="pre">.vtu</span></code> (VTK Xml Format).</p>
+</div>
+<div class="section" id="creating-a-grid-from-element-data">
+<h3>Creating a grid from element data<a class="headerlink" href="#creating-a-grid-from-element-data" title="Permalink to this headline">¶</a></h3>
+<p>Bempp grids can be generated from arrays containing vertex coordinates and
+connectivity information. For example, to create a grid consisting of two
+triangles with vertices <span class="math notranslate nohighlight">\(\\{(0, 0, 0), (1, 0, 0), (0, 1, 0)\\}\)</span> and
+<span class="math notranslate nohighlight">\(\\{(1, 0, 0), (1, 1, 0), (0, 1, 0)\\}\)</span> we use the following commands:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">elements</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">Grid</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">elements</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the three arrays in the <code class="docutils literal notranslate"><span class="pre">vertices</span></code> array are the <span class="math notranslate nohighlight">\(x\)</span>-coordinates,
+then the <span class="math notranslate nohighlight">\(y\)</span>-coordinates, then the <span class="math notranslate nohighlight">\(z\)</span>-coordinates.
+Similarly, the three arrays in the <code class="docutils literal notranslate"><span class="pre">elements</span></code> array are the first points of each triangle,
+then the second points, then the third points.
+In general, the <code class="docutils literal notranslate"><span class="pre">vertices</span></code> and <code class="docutils literal notranslate"><span class="pre">elements</span></code> arrays should have shapes <span class="math notranslate nohighlight">\(3\times M\)</span> and <span class="math notranslate nohighlight">\(3\times N\)</span>
+(respectively) for a grid with <span class="math notranslate nohighlight">\(M\)</span> vertices and <span class="math notranslate nohighlight">\(N\)</span> elements.</p>
+<p>The array <code class="docutils literal notranslate"><span class="pre">vertices</span></code> contains the 3D coordinates of all vertices. The array
+<code class="docutils literal notranslate"><span class="pre">elements</span></code> contains the connectivity information. In this case the first
+triangle consists of the vertices 0, 1, 2, and the second triangle consists
+of the vertices 1, 3, 2.</p>
+<p>Optionally, we can specify a list <code class="docutils literal notranslate"><span class="pre">domain_indices</span></code>
+that gives different groups of elements the same id. This can be used
+for example to generate different types of boundary data on different parts
+of the grid, or to specify function spaces only on parts of the grid. In this
+example, both triangles automatically have the identifier 0 since nothing
+else was specified. This is equivalent to running:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">Grid</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">elements</span><span class="p">,</span> <span class="n">domain_indices</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-grids">
+<h2>Using Grids<a class="headerlink" href="#using-grids" title="Permalink to this headline">¶</a></h2>
+<p>Once you have created a Bempp grid, you may want to use information about your grid.
+This page show how commonly used information can be obtained from a Bempp grid.</p>
+<div class="section" id="querying-grid-information">
+<h3>Querying grid information<a class="headerlink" href="#querying-grid-information" title="Permalink to this headline">¶</a></h3>
+<p>The number of elements, edges and vertices in a grid are given by:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">number_of_elements</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">number_of_edges</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">number_of_vertices</span>
+</pre></div>
+</div>
+<p>To query the maximum and minimum element diameter use the following attributes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">maximum_element_diameter</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">minimum_element_diameter</span>
+</pre></div>
+</div>
+<p>The vertex indices of the element 5 can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">elements</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that the numbering of element starts at 0, so element 5 is the grid’s sixth element.</p>
+<p>The vertex coordinates of element 5 can be found using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">vertices</span><span class="p">[:,</span> <span class="n">grid</span><span class="o">.</span><span class="n">elements</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>The area of the element 5 is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">volumes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The edge indices associated with element 5 are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">element_edges</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The vertex indices of the edges of element 5 can be obtained using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">edges</span><span class="p">[:,</span> <span class="n">grid</span><span class="o">.</span><span class="n">element_edges</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>This returns a 2×3 array of the vertex coordinates associated
+with the three edges of the element.
+Edges in Bempp are ordered in the following way:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Edge</p></th>
+<th class="head"><p>First vertex</p></th>
+<th class="head"><p>Second vertex</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>Full automatically-generated documentation of the Bempp <code class="docutils literal notranslate"><span class="pre">Grid</span></code> class can be found
+<a class="reference external" href="https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/grid/grid/index.html#bempp.api.grid.grid.Grid">here</a>.</p>
+</div>
+<div class="section" id="plotting-and-exporting-grids">
+<h3>Plotting and exporting grids<a class="headerlink" href="#plotting-and-exporting-grids" title="Permalink to this headline">¶</a></h3>
+<p>To export a grid, we can use the <code class="docutils literal notranslate"><span class="pre">export</span></code> command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s1">&#39;grid.msh&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This commands export the object <code class="docutils literal notranslate"><span class="pre">grid</span></code> as Gmsh file with the
+name <code class="docutils literal notranslate"><span class="pre">grid.msh</span></code>.</p>
+<p>In order to plot a grid, we can simply use the command:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default, this will plot using Gmsh (or plotly if you are inside a Jupyter notebook).
+The following command can be used to change the plotting backend.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">PLOT_BACKEND</span> <span class="o">=</span> <span class="s2">&quot;gmsh&quot;</span>
+<span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">PLOT_BACKEND</span> <span class="o">=</span> <span class="s2">&quot;paraview&quot;</span>
+</pre></div>
+</div>
+<p>This requires Gmsh or Paraview to be available in the system path.</p>
+</div>
 </div>
 </div>
 
@@ -300,7 +515,7 @@ Bempp currently only supports grids consisting of flat surface triangles.</p>
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="creating_grids.html" title="next page">Overview</a>
+    <a class='right-next' id="next-link" href="function_spaces.html" title="next page">Function Spaces</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -319,7 +534,10 @@ Bempp currently only supports grids consisting of flat surface triangles.</p>
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>
