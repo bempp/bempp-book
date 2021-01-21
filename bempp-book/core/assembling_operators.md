@@ -11,6 +11,9 @@ time and storage space. For such problems, Bempp can use the [fast multipole met
 to speed up matrix assembly and the computation of matrix-vector products. This is done via
 interfaces to the external [ExaFMM](https://github.com/exafmm/exafmm-t) library.
 
+Full documentation of the functionality of Bempp grids can be found on
+[Read the Docs](https://bempp-cl.readthedocs.io/en/latest/docs/bempp/core/).
+
 ## Assembly options
 The type of assembly used by Bempp can be controlled by passing a `device_interface` keyword
 argument into an operator. The possible values that can be passed in are `"opencl"`,

@@ -4,6 +4,8 @@ Grid Functions
 In Bempp, data on a given grid is represented as a grid function object.
 A grid function consists of a set of basis function coefficients and a corresponding [function space](function_spaces.md).
 
+Full documentation of
+the functionality of Bempp grid functions can be found on [Read the Docs](https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/assembly/grid_function/index.html).
 
 ## Initialising with a Python callable
 Grid functions can be created from Python callables.
