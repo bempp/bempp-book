@@ -88,6 +88,10 @@ single = laplace.single_layer(
     )
 ```
 
+Options for controlling which device OpenCL will use can be found in the
+[Assembling Operators](../core/assembling_operators.md#assembling-on-different-devices)
+section of the documentation of the core.
+
 The matrix discretisation of an operator can be obtained using, for example:
 
 ```python
