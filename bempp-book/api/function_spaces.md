@@ -43,9 +43,9 @@ The following scalar-valued spaces are supported in Bempp:
 
 Space Type | Order(s) | Description
 ---------- | -------- | -----------
-`"DP"`     | 0 or 1   | Discontinuous polynomials
-`"P"`      | 1        | Continuous polynomials
-`"DUAL"`   | 0 or 1   | Dual spaces on the barycentrically refined grid
+`"DP"`     | 0 or 1   | Discontinuous [polynomials](https://defelement.com/elements/lagrange.html)
+`"P"`      | 1        | Continuous [polynomials](https://defelement.com/elements/lagrange.html)
+`"DUAL"`   | 0 or 1   | [Dual spaces](https://defelement.com/elements/dual.html) on the barycentrically refined grid
 
 ### Discontinuous polynomial spaces
 DP spaces are polynomial inside each element and discontinuous between elements.
@@ -145,10 +145,10 @@ The following vector-valued spaces are supported in Bempp:
 
 Space Type | Order | Description
 ---------- | ----- | -----------
-`"RWG"`    | 0     | Rao--Wilson--Glisson Hdiv functions
-`"SNC"`    | 0     | Scaled N&eacute;d&eacute;lec Hcurl functions
-`"BC"`     | 0     | Buffa--Christiansen Hdiv functions
-`"RBC"`    | 0     | Rotated Buffa--Christiansen Hcurl functions
+`"RWG"`    | 0     | [Rao--Wilson--Glisson](https://defelement.com/elements/raviart-thomas.html) Hdiv functions
+`"SNC"`    | 0     | [Scaled N&eacute;d&eacute;lec](https://defelement.com/elements/nedelec1.html) Hcurl functions
+`"BC"`     | 0     | [Buffa--Christiansen](https://defelement.com/elements/buffa-christiansen.html) Hdiv functions
+`"RBC"`    | 0     | [Rotated Buffa--Christiansen](https://defelement.com/elements/rotated-buffa-christiansen.html) Hcurl functions
 
 When solving Maxwell's equations, the correct combination of Hdiv and Hcurl spaces must be used.
 
