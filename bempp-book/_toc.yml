@@ -1,33 +1,18 @@
-- file: intro
-
-- part: API Overview
+format: jb-book
+root: intro
+parts:
+- caption: API Overview
   chapters:
-    - file: api/grids
-    - file: api/function_spaces
-    - file: api/grid_functions
-    - file: api/boundary_operators
-    - file: api/solvers
-    - file: api/potential_operators
-- part: A dive into the Bempp core routines
+  - file: api/grids
+  - file: api/function_spaces
+  - file: api/grid_functions
+  - file: api/boundary_operators
+  - file: api/solvers
+  - file: api/potential_operators
+- caption: A dive into the Bempp core routines
   chapters:
-    - file: core/assembling_operators
-
-- part: Mathematical background of boundary integral equations
+  - file: core/assembling_operators
+- caption: Mathematical background of boundary integral equations
   chapters:
-    - file: theory/greens_representation
-    - file: theory/function_spaces
-      #sections:
-      #      - file: theory/sobolev_spaces
-      #- file: theory/discrete_function_spaces
-      #sections:
-      #      - file: theory/dofs
-      #      - file: theory/inf-sup
-      #      - file: theory/projections
-      
-
-
-      
-
-
-
-      
+  - file: theory/greens_representation
+  - file: theory/function_spaces
