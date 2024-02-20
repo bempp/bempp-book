@@ -1,335 +1,422 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Function Spaces &#8212; The Bempp Book</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/function_spaces';</script>
     <link rel="canonical" href="https://bempp.com/handbook/api/function_spaces.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Grid Functions" href="grid_functions.html" />
     <link rel="prev" title="Grids" href="grids.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://bempp.com/handbook/api/function_spaces.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Function Spaces" />
-<meta property="og:description" content="Function Spaces  Once we have created a grid, we can define finite-dimensional function spaces on the grid. These spaces will then be used to discretise the bou" />
-<meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
   
   
-  <h1 class="site-logo" id="site-title">The Bempp Book</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Bempp Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Bempp Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Overview</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="grids.html">Grids</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Function Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid_functions.html">Grid Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boundary_operators.html">Boundary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solvers.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential_operators.html">Potential Operators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A dive into the Bempp core routines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/assembling_operators.html">Assembling Operators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematical background of boundary integral equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../theory/greens_representation.html">Green’s Representation Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/function_spaces.html">Function Spaces for scalar problems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/bempp/bempp-book/edit/master/api/function_spaces.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  API Overview
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="grids.html">
-   Grids
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Function Spaces
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="grid_functions.html">
-   Grid Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="boundary_operators.html">
-   Boundary Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="solvers.html">
-   Linear Solvers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="potential_operators.html">
-   Potential Operators
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  A dive into the Bempp core routines
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_operators.html">
-   Assembling Operators
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematical background of boundary integral equations
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../theory/greens_representation.html">
-   Green’s Representation Theorem
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../theory/function_spaces.html">
-   Function Spaces for scalar problems
-  </a>
- </li>
-</ul>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Fapi/function_spaces.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/api/function_spaces.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-        <!-- Source interaction buttons -->
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/function_spaces.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Fapi/function_spaces.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/bempp/bempp-book/edit/master/api/function_spaces.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
 
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
+</div>
+</div>
+              
+              
 
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Function Spaces</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#defining-a-function-space">
-   Defining a function space
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scalar-function-spaces">
-   Scalar Function Spaces
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#discontinuous-polynomial-spaces">
-     Discontinuous polynomial spaces
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#continuous-polynomial-spaces">
-     Continuous polynomial spaces
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#barycentric-dual-spaces">
-     Barycentric dual spaces
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vector-function-spaces">
-   Vector Function Spaces
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rwg-and-snc-spaces">
-     RWG and SNC spaces
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Barycentric dual spaces
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-spaces-on-segments">
-   Function Spaces on Segments
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#controlling-segment-spaces">
-     Controlling segment spaces
-    </a>
-   </li>
-  </ul>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-function-space">Defining a function space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-function-spaces">Scalar Function Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-polynomial-spaces">Discontinuous polynomial spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-polynomial-spaces">Continuous polynomial spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barycentric-dual-spaces">Barycentric dual spaces</a></li>
 </ul>
-
-        </nav>
-        
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-function-spaces">Vector Function Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rwg-and-snc-spaces">RWG and SNC spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Barycentric dual spaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-spaces-on-segments">Function Spaces on Segments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-segment-spaces">Controlling segment spaces</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="function-spaces">
-<h1>Function Spaces<a class="headerlink" href="#function-spaces" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="function-spaces">
+<h1>Function Spaces<a class="headerlink" href="#function-spaces" title="Permalink to this heading">#</a></h1>
 <p>Once we have created a grid, we can define finite-dimensional function spaces
 on the grid. These spaces will then be used to discretise the boundary integral
 formulations of our problem.</p>
 <p>Full documentation of Bempp function spaces can be found on <a class="reference external" href="https://bempp-cl.readthedocs.io/en/latest/docs/bempp/api/space/index.html">Read the Docs</a>.</p>
-<div class="section" id="defining-a-function-space">
-<h2>Defining a function space<a class="headerlink" href="#defining-a-function-space" title="Permalink to this headline">¶</a></h2>
+<section id="defining-a-function-space">
+<h2>Defining a function space<a class="headerlink" href="#defining-a-function-space" title="Permalink to this heading">#</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">function_space</span></code> is used to initialise spaces. To define
 a space of piecewise constant functions we use the command:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -347,15 +434,15 @@ difference to earlier versions that also supported higher order spaces.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span><span class="o">.</span><span class="n">global_dof_count</span>
 </pre></div>
 </div>
-<p>For solving Laplace or Helmholtz problems, <a class="reference external" href="#scalar-function-spaces">scalar function spaces</a>
+<p>For solving Laplace or Helmholtz problems, <span class="xref myst">scalar function spaces</span>
 should be used.
-For solving Maxwell’s equations, <a class="reference external" href="#vector-function-spaces">vector function spaces</a>
+For solving Maxwell’s equations, <span class="xref myst">vector function spaces</span>
 should be used.</p>
-</div>
-<div class="section" id="scalar-function-spaces">
-<h2>Scalar Function Spaces<a class="headerlink" href="#scalar-function-spaces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scalar-function-spaces">
+<h2>Scalar Function Spaces<a class="headerlink" href="#scalar-function-spaces" title="Permalink to this heading">#</a></h2>
 <p>The following scalar-valued spaces are supported in Bempp:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Space Type</p></th>
 <th class="head"><p>Order(s)</p></th>
@@ -377,14 +464,16 @@ should be used.</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="discontinuous-polynomial-spaces">
-<h3>Discontinuous polynomial spaces<a class="headerlink" href="#discontinuous-polynomial-spaces" title="Permalink to this headline">¶</a></h3>
+<section id="discontinuous-polynomial-spaces">
+<h3>Discontinuous polynomial spaces<a class="headerlink" href="#discontinuous-polynomial-spaces" title="Permalink to this heading">#</a></h3>
 <p>DP spaces are polynomial inside each element and discontinuous between elements.
 An example basis function of an order 0 DP space is shown in <a class="reference internal" href="#dp0"><span class="std std-numref">Fig. 1</span></a>.</p>
-<div class="figure align-default" id="dp0">
+<figure class="align-default" id="dp0">
 <a class="reference internal image-reference" href="../_images/dp0.png"><img alt="../_images/dp0.png" src="../_images/dp0.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Discontinuous polynomial order 0 basis function</span><a class="headerlink" href="#dp0" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Discontinuous polynomial order 0 basis function</span><a class="headerlink" href="#dp0" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DP&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -392,45 +481,53 @@ An example basis function of an order 0 DP space is shown in <a class="reference
 </div>
 <p>The DOFs of an order 0 DP space are at the midpoints of each cell.
 The DOFs of an order 1 DP space are at the three vertices of each cell.</p>
-</div>
-<div class="section" id="continuous-polynomial-spaces">
-<h3>Continuous polynomial spaces<a class="headerlink" href="#continuous-polynomial-spaces" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="continuous-polynomial-spaces">
+<h3>Continuous polynomial spaces<a class="headerlink" href="#continuous-polynomial-spaces" title="Permalink to this heading">#</a></h3>
 <p>P spaces are polynomial inside each element and continuous between elements.
 An example basis function of an order 1 P space is shown in <a class="reference internal" href="#p1"><span class="std std-numref">Fig. 2</span></a>.</p>
-<div class="figure align-default" id="p1">
+<figure class="align-default" id="p1">
 <a class="reference internal image-reference" href="../_images/p1.png"><img alt="../_images/p1.png" src="../_images/p1.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Continuous polynomial order 1 basis function</span><a class="headerlink" href="#p1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Continuous polynomial order 1 basis function</span><a class="headerlink" href="#p1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>This space can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The DOFs of an order 1 P space are at the three vertices of each cell.</p>
-</div>
-<div class="section" id="barycentric-dual-spaces">
-<h3>Barycentric dual spaces<a class="headerlink" href="#barycentric-dual-spaces" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="barycentric-dual-spaces">
+<h3>Barycentric dual spaces<a class="headerlink" href="#barycentric-dual-spaces" title="Permalink to this heading">#</a></h3>
 <p>To define the barycentric dual space, we first create the barycentrically refined mesh by joining
 each vertex of every triangle with the centre of the opposite side, as shown in <a class="reference internal" href="#barymesh"><span class="std std-numref">Fig. 3</span></a>.</p>
-<div class="figure align-default" id="barymesh">
+<figure class="align-default" id="barymesh">
 <a class="reference internal image-reference" href="../_images/barycentric_mesh.png"><img alt="../_images/barycentric_mesh.png" src="../_images/barycentric_mesh.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Barycentrically refining a grid</span><a class="headerlink" href="#barymesh" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Barycentrically refining a grid</span><a class="headerlink" href="#barymesh" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The order 0 dual spaces are piecewise constant functions on the dual cells.
 An example basis function of an order 0 DUAL space is shown in <a class="reference internal" href="#dual0"><span class="std std-numref">Fig. 4</span></a>.
 Order 0 DUAL spaces form a stable dual pairing with order 1 P spaces.</p>
-<div class="figure align-default" id="dual0">
+<figure class="align-default" id="dual0">
 <a class="reference internal image-reference" href="../_images/dual0.png"><img alt="../_images/dual0.png" src="../_images/dual0.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Dual order 0 basis function</span><a class="headerlink" href="#dual0" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Dual order 0 basis function</span><a class="headerlink" href="#dual0" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The order 1 dual basis functions are linear combinations of piecewise linear
 functions on the barycentric cells, and are defined in
 <a class="reference external" href="https://www.jstor.org/stable/40234460?seq=1"><em>A dual finite element complex on the barycentric refinement</em> (2007) by A. Buffa and S. Christiansen</a>.
 An example basis function of an order 1 DUAL space is shown in <a class="reference internal" href="#dual1"><span class="std std-numref">Fig. 5</span></a>.
 Order 1 DUAL spaces form a stable dual pairing with order 0 DP spaces.</p>
-<div class="figure align-default" id="dual1">
+<figure class="align-default" id="dual1">
 <a class="reference internal image-reference" href="../_images/dual1.png"><img alt="../_images/dual1.png" src="../_images/dual1.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Dual order 1 basis function</span><a class="headerlink" href="#dual1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Dual order 1 basis function</span><a class="headerlink" href="#dual1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DUAL&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DUAL&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -440,12 +537,12 @@ Order 1 DUAL spaces form a stable dual pairing with order 0 DP spaces.</p>
 (ie the midpoints of each barycentric dual cell).
 The DOFs of an order 1 DUAL space are at the mispoints of each cell
 (ie the vertices of each barycentric dual cell).</p>
-</div>
-</div>
-<div class="section" id="vector-function-spaces">
-<h2>Vector Function Spaces<a class="headerlink" href="#vector-function-spaces" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="vector-function-spaces">
+<h2>Vector Function Spaces<a class="headerlink" href="#vector-function-spaces" title="Permalink to this heading">#</a></h2>
 <p>The following vector-valued spaces are supported in Bempp:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Space Type</p></th>
 <th class="head"><p>Order</p></th>
@@ -472,25 +569,27 @@ The DOFs of an order 1 DUAL space are at the mispoints of each cell
 </tbody>
 </table>
 <p>When solving Maxwell’s equations, the correct combination of Hdiv and Hcurl spaces must be used.</p>
-<div class="section" id="rwg-and-snc-spaces">
-<h3>RWG and SNC spaces<a class="headerlink" href="#rwg-and-snc-spaces" title="Permalink to this headline">¶</a></h3>
+<section id="rwg-and-snc-spaces">
+<h3>RWG and SNC spaces<a class="headerlink" href="#rwg-and-snc-spaces" title="Permalink to this heading">#</a></h3>
 <p>RWG and SNC spaces are vector-valued spaces, whose values are tangential to the surface triangles.
 Between cells, RWG functions are continuous normal
 to the triangle’s edges, while SNC spaces are continuous tangential to the triangle’s edges.
 Example RWG (left) and SNC (right) basis functions are shown in <a class="reference internal" href="#rwg-and-snc"><span class="std std-numref">Fig. 6</span></a>.</p>
-<div class="figure align-default" id="rwg-and-snc">
+<figure class="align-default" id="rwg-and-snc">
 <a class="reference internal image-reference" href="../_images/rwg_and_snc.png"><img alt="../_images/rwg_and_snc.png" src="../_images/rwg_and_snc.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">An RWG and a SNC basis function</span><a class="headerlink" href="#rwg-and-snc" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">An RWG and a SNC basis function</span><a class="headerlink" href="#rwg-and-snc" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rwg_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;RWG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">snc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;SNC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The DOFs of RWG and SNC spaces are at the midpoints of the edges of each cell.</p>
-</div>
-<div class="section" id="id1">
-<h3>Barycentric dual spaces<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id1">
+<h3>Barycentric dual spaces<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Like the scalar DUAL spaces, BC and RBC spaces are defined on the barycentrically refined grid.
 This grid is formed by joining
 each vertex of every triangle with the centre of the opposite side, as shown in <a class="reference internal" href="#barymesh"><span class="std std-numref">Fig. 3</span></a>.</p>
@@ -498,10 +597,12 @@ each vertex of every triangle with the centre of the opposite side, as shown in 
 and are defined in
 <a class="reference external" href="https://www.jstor.org/stable/40234460?seq=1"><em>A dual finite element complex on the barycentric refinement</em> (2007) by A. Buffa and S. Christiansen</a>.
 Example BC (left) and RBC (right) basis functions are shown in <a class="reference internal" href="#bc-and-rbc"><span class="std std-numref">Fig. 7</span></a>.</p>
-<div class="figure align-default" id="bc-and-rbc">
+<figure class="align-default" id="bc-and-rbc">
 <a class="reference internal image-reference" href="../_images/bc_and_rbc.png"><img alt="../_images/bc_and_rbc.png" src="../_images/bc_and_rbc.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A BC and a RBC basis function</span><a class="headerlink" href="#bc-and-rbc" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">A BC and a RBC basis function</span><a class="headerlink" href="#bc-and-rbc" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>These spaces can be created in Bempp with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">rbc_space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;RBC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -509,10 +610,10 @@ Example BC (left) and RBC (right) basis functions are shown in <a class="referen
 </div>
 <p>The DOFs of BC and RBC spaces are at the midpoints of the edges of each cell (or equivalently at
 a point on the edges of the barycentric dual cells).</p>
-</div>
-</div>
-<div class="section" id="function-spaces-on-segments">
-<h2>Function Spaces on Segments<a class="headerlink" href="#function-spaces-on-segments" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="function-spaces-on-segments">
+<h2>Function Spaces on Segments<a class="headerlink" href="#function-spaces-on-segments" title="Permalink to this heading">#</a></h2>
 <p>Bempp can create spaces on segments of a grid as well as on the entire grid.
 In order to do this, domain indices must be provided when [creating .md).
 Some built-in grids have domain indices: for example, the cube has six segments
@@ -525,8 +626,8 @@ for the faces (numbered 1 to 6).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">space</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">function_space</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;DP&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">segments</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="section" id="controlling-segment-spaces">
-<h3>Controlling segment spaces<a class="headerlink" href="#controlling-segment-spaces" title="Permalink to this headline">¶</a></h3>
+<section id="controlling-segment-spaces">
+<h3>Controlling segment spaces<a class="headerlink" href="#controlling-segment-spaces" title="Permalink to this heading">#</a></h3>
 <p>There are two options that can be used to control the behaviour of a space on a segment:
 <code class="docutils literal notranslate"><span class="pre">include_boundary_dofs</span></code> and <code class="docutils literal notranslate"><span class="pre">truncate_at_segment_edge</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">include_boundary_dofs</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, DOF points on vertices and edges on the boundary.
@@ -537,9 +638,9 @@ boundary will be outside the domain.</p>
 segment, whenever a basis function will extend outside the segments. By default, this is <code class="docutils literal notranslate"><span class="pre">False</span></code>.
 Setting this option to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cause the function space to be discontinuous at the edge
 of the segment.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -553,7 +654,7 @@ of the segment.</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./api"
         },
         predefinedOutput: true
@@ -561,38 +662,117 @@ of the segment.</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="grids.html" title="previous page">Grids</a>
-    <a class='right-next' id="next-link" href="grid_functions.html" title="next page">Grid Functions</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Timo Betcke and Matthew Scroggs<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="grids.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Grids</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="grid_functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Grid Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-function-space">Defining a function space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-function-spaces">Scalar Function Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-polynomial-spaces">Discontinuous polynomial spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-polynomial-spaces">Continuous polynomial spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barycentric-dual-spaces">Barycentric dual spaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-function-spaces">Vector Function Spaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rwg-and-snc-spaces">RWG and SNC spaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Barycentric dual spaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-spaces-on-segments">Function Spaces on Segments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-segment-spaces">Controlling segment spaces</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Timo Betcke and Matthew Scroggs
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

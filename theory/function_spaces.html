@@ -1,315 +1,406 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Function Spaces for scalar problems &#8212; The Bempp Book</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'theory/function_spaces';</script>
     <link rel="canonical" href="https://bempp.com/handbook/theory/function_spaces.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Green’s Representation Theorem" href="greens_representation.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://bempp.com/handbook/theory/function_spaces.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Function Spaces for scalar problems" />
-<meta property="og:description" content="Function Spaces for scalar problems  In Green’s Representation Theorem, we derived Green’s representation theorem for Helmholtz type problems in three dimension" />
-<meta property="og:image"       content="https://bempp.com/handbook/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
   
   
-  <h1 class="site-logo" id="site-title">The Bempp Book</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Bempp Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Bempp Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/grids.html">Grids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/function_spaces.html">Function Spaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/grid_functions.html">Grid Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/boundary_operators.html">Boundary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/solvers.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/potential_operators.html">Potential Operators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A dive into the Bempp core routines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/assembling_operators.html">Assembling Operators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Mathematical background of boundary integral equations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="greens_representation.html">Green’s Representation Theorem</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Function Spaces for scalar problems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/bempp/bempp-book/edit/master/theory/function_spaces.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Introduction
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  API Overview
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/grids.html">
-   Grids
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/function_spaces.html">
-   Function Spaces
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/grid_functions.html">
-   Grid Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/boundary_operators.html">
-   Boundary Operators
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/solvers.html">
-   Linear Solvers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../api/potential_operators.html">
-   Potential Operators
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  A dive into the Bempp core routines
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../core/assembling_operators.html">
-   Assembling Operators
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematical background of boundary integral equations
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="greens_representation.html">
-   Green’s Representation Theorem
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Function Spaces for scalar problems
-  </a>
- </li>
-</ul>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Ftheory/function_spaces.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
 
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/theory/function_spaces.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-        <!-- Source interaction buttons -->
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/theory/function_spaces.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/bempp/bempp-book/issues/new?title=Issue%20on%20page%20%2Ftheory/function_spaces.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/bempp/bempp-book/edit/master/theory/function_spaces.md"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
 
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
+</div>
+</div>
+              
+              
 
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Function Spaces for scalar problems</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-spaces-l-2-omega-and-h-1-omega">
-   The spaces
-   <span class="math notranslate nohighlight">
-    \(L^2(\Omega)\)
-   </span>
-   and
-   <span class="math notranslate nohighlight">
-    \(H^1(\Omega)\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
-   The trace spaces
-   <span class="math notranslate nohighlight">
-    \(H^{1/2}(\Omega)\)
-   </span>
-   and
-   <span class="math notranslate nohighlight">
-    \(H^{-1/2}(\Omega)\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#norms-inner-products-and-dual-pairings">
-   Norms, inner products and dual pairings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-remark-on-the-smoothness-of-gamma">
-   A remark on the smoothness of
-   <span class="math notranslate nohighlight">
-    \(\Gamma\)
-   </span>
-   .
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#function-spaces-for-potential-operators">
-   Function spaces for potential operators
-  </a>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spaces-l-2-omega-and-h-1-omega">The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega">The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norms-inner-products-and-dual-pairings">Norms, inner products and dual pairings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-remark-on-the-smoothness-of-gamma">A remark on the smoothness of <span class="math notranslate nohighlight">\(\Gamma\)</span>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-spaces-for-potential-operators">Function spaces for potential operators</a></li>
 </ul>
-
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="function-spaces-for-scalar-problems">
-<h1>Function Spaces for scalar problems<a class="headerlink" href="#function-spaces-for-scalar-problems" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="function-spaces-for-scalar-problems">
+<h1>Function Spaces for scalar problems<a class="headerlink" href="#function-spaces-for-scalar-problems" title="Permalink to this heading">#</a></h1>
 <p>In <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a>, we derived Green’s representation
 theorem for Helmholtz type problems in three dimensions. In this section, we
 discuss in more detail what the correct function spaces for the various objects
@@ -334,12 +425,12 @@ respectively.</p>
 \]</div>
 <p>for <span class="math notranslate nohighlight">\(x\in\Omega\)</span>. To obtain more insight into the properties of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> we multiply this equation with <span class="math notranslate nohighlight">\(\overline{u_{\Omega}}\)</span> (the complex conjugate of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span>) and integrate by parts to obtain</p>
 <div class="math notranslate nohighlight" id="equation-eq-squared-helmholtz">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-squared-helmholtz" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-squared-helmholtz" title="Permalink to this equation">#</a></span>\[
 \int_{\Omega}|\nabla u_{\Omega}|^2\,\mathrm{d}V - k^2\int_{\Omega} |u_{\Omega}|^2\,\mathrm{d}V - \int_{\Gamma}\overline{u_{\Gamma}}u_\mathbf{n}\,\mathrm{d}S = \int_{\Omega}\overline{u_{\Omega}}f\,\mathrm{d}V
 \]</div>
 <p>By <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> we denote the restriction of the domain solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
-<div class="section" id="the-spaces-l-2-omega-and-h-1-omega">
-<h2>The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span><a class="headerlink" href="#the-spaces-l-2-omega-and-h-1-omega" title="Permalink to this headline">¶</a></h2>
+<section id="the-spaces-l-2-omega-and-h-1-omega">
+<h2>The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span><a class="headerlink" href="#the-spaces-l-2-omega-and-h-1-omega" title="Permalink to this heading">#</a></h2>
 <p>In order for <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> to make sense, we require all terms to be finite. This motivates the definition of the following spaces.</p>
 <p>We define the following two spaces:</p>
 <ul class="simple">
@@ -365,9 +456,9 @@ treatment of larger classes of problems than just those where a second
 derivative exists in a strong classical sense. This is not artifical but
 involves problems in domains with corners or where the forcing term <span class="math notranslate nohighlight">\(f\)</span> on the
 right-hand side is just a point load.</p>
-</div>
-<div class="section" id="the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
-<h2>The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span><a class="headerlink" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-trace-spaces-h-1-2-omega-and-h-1-2-omega">
+<h2>The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span><a class="headerlink" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega" title="Permalink to this heading">#</a></h2>
 <p>We have not yet discussed the spaces associated with the term <span class="math notranslate nohighlight">\(\int_{\Gamma}u_{\Gamma}u_\mathbf{n}\)</span> in <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a>. The function <span class="math notranslate nohighlight">\(u_{\Gamma}\)</span> is the restriction of <span class="math notranslate nohighlight">\(u_{\Omega}\)</span> to <span class="math notranslate nohighlight">\(\Gamma\)</span>. It is possible to define a trace operator <span class="math notranslate nohighlight">\(\gamma_0\)</span>, which maps functions in <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span> to the values on the boundary. We define the space <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> as the range of this operator, that is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -389,9 +480,9 @@ Helmholtz equation <span class="math notranslate nohighlight">\(Lu_{\Omega} = 0\
 explanation is that taking derivatives reduces the order of a Sobolev space by
 <span class="math notranslate nohighlight">\(1\)</span>. The space of boundary traces has order <span class="math notranslate nohighlight">\(1/2\)</span>, and henceforth the space of
 normal derivatives has order one less, which is <span class="math notranslate nohighlight">\(-1/2\)</span>.</p>
-</div>
-<div class="section" id="norms-inner-products-and-dual-pairings">
-<h2>Norms, inner products and dual pairings<a class="headerlink" href="#norms-inner-products-and-dual-pairings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="norms-inner-products-and-dual-pairings">
+<h2>Norms, inner products and dual pairings<a class="headerlink" href="#norms-inner-products-and-dual-pairings" title="Permalink to this heading">#</a></h2>
 <p>Consider that we have computed some approximate solution <span class="math notranslate nohighlight">\(\tilde{u_{\Omega}}\)</span>
 to an exact solution <span class="math notranslate nohighlight">\(u_{\Omega}\)</span>. We would like to quantify the error
 <span class="math notranslate nohighlight">\(e_{\Omega} := \tilde{u_{\Omega}} - u_{\Omega}\)</span>. A typical measure here is the
@@ -439,9 +530,9 @@ H^{-1/2}(\Gamma)\)</span> if the sesquilinear map</p>
 \]</div>
 <p>is well defined and bounded for <span class="math notranslate nohighlight">\(u\in H^{1/2}(\Gamma)\)</span>.</p>
 <p>Correspondingly, in <a class="reference internal" href="#equation-eq-squared-helmholtz">(1)</a> the pairing <span class="math notranslate nohighlight">\(\int_{\Omega}\overline{u_{\Omega}}f\ dV\)</span> is between a function <span class="math notranslate nohighlight">\(u\in H^1{\Omega}\)</span> and an object <span class="math notranslate nohighlight">\(f\)</span> in the dual space <span class="math notranslate nohighlight">\(H^{-1}(\Omega)\)</span>.</p>
-</div>
-<div class="section" id="a-remark-on-the-smoothness-of-gamma">
-<h2>A remark on the smoothness of <span class="math notranslate nohighlight">\(\Gamma\)</span>.<a class="headerlink" href="#a-remark-on-the-smoothness-of-gamma" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-remark-on-the-smoothness-of-gamma">
+<h2>A remark on the smoothness of <span class="math notranslate nohighlight">\(\Gamma\)</span>.<a class="headerlink" href="#a-remark-on-the-smoothness-of-gamma" title="Permalink to this heading">#</a></h2>
 <p>For the derivation of Green’s representation theorem we assumed that the
 boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> of <span class="math notranslate nohighlight">\(\Omega\)</span> is sufficiently smooth and stated that it is
 enough to be twice differentiable. Indeed, this condition can be weakened quite
@@ -449,9 +540,9 @@ substantially. It is sufficient to assume that <span class="math notranslate noh
 boundary. While the actual definition is quite intricate, for most practical
 purposes it is enough to think of <span class="math notranslate nohighlight">\(\Omega\)</span> as a bounded domain whose boundary
 <span class="math notranslate nohighlight">\(\Gamma\)</span> is piecewise smooth with no cusps or slits.</p>
-</div>
-<div class="section" id="function-spaces-for-potential-operators">
-<h2>Function spaces for potential operators<a class="headerlink" href="#function-spaces-for-potential-operators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="function-spaces-for-potential-operators">
+<h2>Function spaces for potential operators<a class="headerlink" href="#function-spaces-for-potential-operators" title="Permalink to this heading">#</a></h2>
 <p>We recall Green’s representation theorem from <a class="reference internal" href="greens_representation.html#content-green-representation"><span class="std std-ref">Green’s Representation Theorem</span></a>.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -465,8 +556,8 @@ u_{\Omega} = \mathcal{V}u_{\mathbf{n}} - \mathcal{K}u_\Gamma +\mathcal{N}f.
 <li><p><span class="math notranslate nohighlight">\(\mathcal{K}:\ H^{-1/2}(\Gamma)\rightarrow H^{1}(\Omega)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{N}:\ H^{-1}(\Omega)\rightarrow H^{1}(\Omega)\)</span></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -480,7 +571,7 @@ u_{\Omega} = \mathcal{V}u_{\mathbf{n}} - \mathcal{K}u_\Gamma +\mathcal{N}f.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./theory"
         },
         predefinedOutput: true
@@ -488,37 +579,97 @@ u_{\Omega} = \mathcal{V}u_{\mathbf{n}} - \mathcal{K}u_\Gamma +\mathcal{N}f.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="greens_representation.html" title="previous page">Green’s Representation Theorem</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Timo Betcke and Matthew Scroggs<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="greens_representation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Green’s Representation Theorem</p>
       </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-spaces-l-2-omega-and-h-1-omega">The spaces <span class="math notranslate nohighlight">\(L^2(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^1(\Omega)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-trace-spaces-h-1-2-omega-and-h-1-2-omega">The trace spaces <span class="math notranslate nohighlight">\(H^{1/2}(\Omega)\)</span> and <span class="math notranslate nohighlight">\(H^{-1/2}(\Omega)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norms-inner-products-and-dual-pairings">Norms, inner products and dual pairings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-remark-on-the-smoothness-of-gamma">A remark on the smoothness of <span class="math notranslate nohighlight">\(\Gamma\)</span>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-spaces-for-potential-operators">Function spaces for potential operators</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Timo Betcke and Matthew Scroggs
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
