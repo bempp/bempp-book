@@ -52,4 +52,7 @@ sphinx:
   extra_extensions          :   # A list of extra extensions to load by Sphinx.
   config                    :   # key-value pairs to directly over-ride the Sphinx configuration
 parse:
-  myst_extended_syntax: true # Extended syntax for Latex in markdown
+  #myst_extended_syntax: true # Extended syntax for Latex in markdown
+  myst_enable_extensions: 
+    - amsmath 
+    - dollarmath
