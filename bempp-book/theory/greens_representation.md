@@ -10,7 +10,7 @@ Our discussion starts with the divergence theorem. Assume that $\Omega\subset\ma
 The divergence theorem now states that for each continuously differentiable vector valued function $\mathbf{F}\in\mathbb{R}^3$ it holds that
 
 $$
-\int_{\Omega} (\nabla \cdot \mathbf{F})\,\mathrm{d}V = \int_{\Gamma} (\mathbf{P}\cdot \mathbf{n})\,\mathrm{d}S.
+\int_{\Omega} (\nabla \cdot \mathbf{F})\,\mathrm{d}V = \int_{\Gamma} (\mathbf{F}\cdot \mathbf{n})\,\mathrm{d}S.
 $$
 
 Here, $\mathbf{n}$ is the exterior normal at the boundary $\Gamma$. The expression $\nabla\cdot \mathbf{F}$ on the left-hand side of the theorem is the divergence of $\mathbf{F}$, also abbreviated $\text{div} \mathbf{F}$. The divergence theorem motivates another definition of the divergence. Let $S_r$ be a small sphere with radius $r$ and center $\mathbf{x}$. Then 
