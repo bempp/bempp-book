@@ -27,7 +27,7 @@ An optional fifth input may be used to pass parameters into the function.
 
 In order for Bempp to assemble a grid function with coefficients of the correct data type,
 these callables must be decorated with either `@bempp.api.real_callable` or
-`@bempp.api.real_callable`.
+`@bempp.api.complex_callable`.
 
 The projection of this callable into a Bempp space can be created with:
 ```python
