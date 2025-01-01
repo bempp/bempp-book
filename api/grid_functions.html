@@ -423,7 +423,7 @@ It is a Numpy array with as many components as the basis functions of the underl
 An optional fifth input may be used to pass parameters into the function.</p>
 <p>In order for Bempp to assemble a grid function with coefficients of the correct data type,
 these callables must be decorated with either <code class="docutils literal notranslate"><span class="pre">&#64;bempp.api.real_callable</span></code> or
-<code class="docutils literal notranslate"><span class="pre">&#64;bempp.api.real_callable</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">&#64;bempp.api.complex_callable</span></code>.</p>
 <p>The projection of this callable into a Bempp space can be created with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid_fun</span> <span class="o">=</span> <span class="n">bempp</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">GridFunction</span><span class="p">(</span><span class="n">space</span><span class="p">,</span> <span class="n">fun</span><span class="o">=</span><span class="n">fun</span><span class="p">)</span>
 </pre></div>
